@@ -106,6 +106,11 @@ Config::define('LOGGED_IN_SALT', env('LOGGED_IN_SALT'));
 Config::define('NONCE_SALT', env('NONCE_SALT'));
 
 /**
+ * ACF PRO key
+ */
+Config::define('ACF_PRO_LICENSE', env('ACF_PRO_KEY'));
+
+/**
  * Custom Settings
  */
 Config::define('AUTOMATIC_UPDATER_DISABLED', true);
