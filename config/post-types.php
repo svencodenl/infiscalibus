@@ -13,14 +13,48 @@ return [
     */
 
     'post_types' => [
-        'seed' => [
-            'menu_icon' => 'dashicons-star-filled',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+        'partnerkantoor' => [
+            'menu_icon' => 'dashicons-building',
+            'menu_position' => 20,
+            'supports' => ['title', 'editor', 'revisions', 'thumbnail'],
             'show_in_rest' => true,
             'names' => [
-                'singular' => 'Seed',
-                'plural' => 'Seeds',
-                'slug' => 'seeds',
+                'singular' => 'Partnerkantoor',
+                'plural' => 'Partnerkantoren',
+                'slug' => 'partnerkantoren',
+            ]
+        ],
+        'vacature' => [
+            'menu_icon' => 'dashicons-text-page',
+            'menu_position' => 20,
+            'supports' => ['title', 'editor', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'names' => [
+                'singular' => 'Vacature',
+                'plural' => 'Vacatures',
+                'slug' => 'vacatures',
+            ]
+        ],
+        'evenement' => [
+            'menu_icon' => 'dashicons-tickets',
+            'menu_position' => 20,
+            'supports' => ['title', 'editor', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'names' => [
+                'singular' => 'Evenement',
+                'plural' => 'Evenementen',
+                'slug' => 'evenement',
+            ]
+        ],
+        'bestuur' => [
+            'menu_icon' => 'dashicons-groups',
+            'menu_position' => 20,
+            'supports' => ['title', 'editor', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'names' => [
+                'singular' => 'Bestuur',
+                'plural' => 'Bestuur',
+                'slug' => 'bestuur',
             ]
         ],
     ],
