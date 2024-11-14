@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "component/hero/homepage";
+
+.max-w-100vw {
+	max-width: 100vw;
+}
