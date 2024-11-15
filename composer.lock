@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "31f6c2eae29763bfedaf0dc27510eb0c",
+    "content-hash": "c41501708e2a449e770104b82c0e5790",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -7003,17 +7003,18 @@
             "homepage": "https://wordpress.org/plugins/safe-svg/"
         },
         {
-            "name": "wpengine/advanced-custom-fields",
+            "name": "wpengine/advanced-custom-fields-pro",
             "version": "6.3.11",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?s=composer&p=acf&t=6.3.11"
+                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?s=composer&p=pro&t=6.3.11"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
             },
             "replace": {
-                "wpackagist-plugin/advanced-custom-fields": "self.version"
+                "wpackagist-plugin/advanced-custom-fields": "self.version",
+                "wpengine/advanced-custom-fields": "self.version"
             },
             "type": "wordpress-plugin"
         }

@@ -31,7 +31,7 @@
 	"repositories": [
 		{
 			"type": "composer",
-			"url": "https://composer.advancedcustomfields.com"
+			"url": "https://connect.advancedcustomfields.com"
 		},
 		{
 			"type": "composer",
@@ -72,7 +72,7 @@
 		"roots/wp-stage-switcher": "^2.2",
 		"vlucas/phpdotenv": "^5.5",
 		"wpackagist-plugin/safe-svg": "^2.1",
-		"wpengine/advanced-custom-fields": "^6.3"
+		"wpengine/advanced-custom-fields-pro": "^6.3"
 	},
 	"require-dev": {
 		"johnbillion/query-monitor": "^3.12",

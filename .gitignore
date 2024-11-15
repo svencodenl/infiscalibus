@@ -37,3 +37,6 @@ yarn-error.log
 
 # Bud
 storage/bud/*
+
+# Exclude auth.json from Git repo
+auth.json
