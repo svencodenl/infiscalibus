@@ -3,7 +3,7 @@
 	font-family: "Helvetica Neue";
 	font-style: normal;
 	font-weight: 400;
-	src: url("@fonts/helvetica-neue-roman.woff2") format("woff2");
+	src: url("#{$font-path}/helvetica-neue-roman.woff2") format("woff2");
 }
 
 @font-face {
@@ -11,7 +11,7 @@
 	font-family: "Helvetica Neue";
 	font-style: normal;
 	font-weight: 600;
-	src: url("@fonts/helvetica-neue-bold.woff2") format("woff2");
+	src: url("#{$font-path}/helvetica-neue-bold.woff2") format("woff2");
 }
 
 @font-face {
@@ -19,7 +19,7 @@
 	font-family: Albra;
 	font-style: normal;
 	font-weight: 300;
-	src: url("@fonts/albra-text-light.woff2") format("woff2");
+	src: url("#{$font-path}/albra-text-light.woff2") format("woff2");
 }
 
 @font-face {
@@ -27,5 +27,5 @@
 	font-family: Albra;
 	font-style: normal;
 	font-weight: 500;
-	src: url("@fonts/albra-medium.woff2") format("woff2");
+	src: url("#{$font-path}/albra-medium.woff2") format("woff2");
 }

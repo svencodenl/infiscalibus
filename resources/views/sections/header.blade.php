@@ -1,4 +1,4 @@
-<header class="{{ $containerClasses }}">
+<header class="header {{ $containerClasses }}">
     <div class="{{ $containerInnerClasses }}">
         <a class="py-3 font-bold text-lg block" href="{{ home_url('/') }}">
             {!! $siteName !!}

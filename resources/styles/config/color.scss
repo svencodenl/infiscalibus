@@ -1,15 +1,16 @@
+/* stylelint-disable scss/no-global-function-names */
 $colors: (
 	// Primary
 	blue-primary: #1d3155,
 	blue-light: #425578,
 	blue-dark: #0a1935,
-	orange: #fa650b,
+	orange-primary: #fa650b,
 	// Secondary
 	background: #f5f2ef,
 	text: #27344b,
 	// Grayscale
-	cola: #000,
-	milk: #fff
+	black: #000,
+	white: #fff
 );
 
 // Color generation
@@ -22,7 +23,7 @@ $colors: (
 }
 
 @each $name, $value in $colors {
-	.text-#{$name}
+	.text--#{$name}
 
  {
 		color: $value !important;
@@ -32,7 +33,7 @@ $colors: (
 		}
 	}
 
-	.bg-#{$name}
+	.bg--#{$name}
 
  {
 		background-color: $value !important;

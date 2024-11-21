@@ -9,7 +9,7 @@
     @php(the_post())
     <section class="">
       @include('partials.homepage-header')
-      <div class="container max-w-5xl mx-auto">
+      <div class="container">
         {{-- @if ($hero = get_field('hero'))
 				@if ($image = $hero['image'])
 					<img src="{{ $image['url'] }}" alt="{{ $image['title'] }}">

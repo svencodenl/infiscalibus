@@ -1,0 +1,56 @@
+// Spacing
+$spacer: 10px;
+$spacers: (
+    0: 0,
+    5: calc($spacer / 2),
+    10: $spacer,
+    15: ($spacer * 1.5),
+    20: ($spacer * 2),
+    25: ($spacer * 2.5),
+    30: ($spacer * 3),
+    35: ($spacer * 3.5),
+    40: ($spacer * 4),
+    45: ($spacer * 4.5),
+    50: ($spacer * 5),
+    55: ($spacer * 5.5),
+    60: ($spacer * 6),
+    65: ($spacer * 6.5),
+    70: ($spacer * 7),
+    75: ($spacer * 7.5),
+    80: ($spacer * 8),
+    85: ($spacer * 8.5),
+    90: ($spacer * 9),
+    95: ($spacer * 9.5),
+    100: ($spacer * 10)
+);
+
+// Grid breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 568px, // iPhone SE landscape
+    md: 768px, // Tablet portrait
+    lg: 1024px, // Tablet landscape
+    xl: 1280px, // Desktop small
+    xxl: 1440px, // Desktop regular
+    fhd: 1600px, // Desktop large
+);
+
+// Grid columns
+$grid-gutter-width: 15px;
+$grid-gutter-width-lg: 20px;
+$grid-gutter-width-xl: 25px;
+$grid-gutter-width-fhd: 30px;
+
+// Grid containers
+$container-mw-sm: 400px;
+$container-mw-md: 768px;
+$container-mw-lg: 1024px;
+$container-mw-xl: 1200px;
+$container-mw-fhd: 1400px;
+$container-max-widths: (
+    sm: $container-mw-sm + $grid-gutter-width * 2,
+    md: $container-mw-md + $grid-gutter-width * 2,
+    lg: $container-mw-lg + $grid-gutter-width-lg * 2,
+    xl: $container-mw-xl + $grid-gutter-width-xl * 2,
+    fhd: $container-mw-fhd + $grid-gutter-width-fhd * 2
+);

@@ -1,0 +1,60 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--height-btn);
+  padding: var(--padding-button);
+  font: {
+    family: $font-family-base;
+    weight: 400;
+    size: var(--font-size-base);
+  }
+
+  border-radius: 100px;
+  line-height: 1;
+  color: color(milk);
+  white-space: nowrap;
+  position: relative;
+  transition: all var(--speed-default) var(--cubic-bezier);
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &.btn-ir {
+    i {
+      margin-left: 15px;
+    }
+  }
+
+  &.btn-il {
+    i {
+      margin-right: 15px;
+    }
+  }
+
+  &.btn-io {
+    width: var(--height-btn);
+    border-radius: 100%;
+
+    .icon-chevron-right {
+      padding-left: 2px;
+    }
+
+    .icon-chevron-left {
+      padding-right: 2px;
+    }
+  }
+
+  @each $name, $value in $colors {
+    &.btn--#{$name} {
+      background-color: color($name);
+      color: color(white);
+    }
+  }
+}

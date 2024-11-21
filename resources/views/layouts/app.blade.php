@@ -13,10 +13,6 @@
   @php(wp_body_open())
 
   <div id="app">
-    <a class="sr-only focus:not-sr-only" href="#main">
-      {{ __('Skip to content', 'radicle') }}
-    </a>
-
     @include('sections.header')
 
     <main id="main">

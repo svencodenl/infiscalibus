@@ -8,38 +8,65 @@ body {
 	min-height: 100vh;
 
 	main {
-		overflow-x: hidden;
-		flex-grow: 1;
-		position: relative;
+			overflow-x: hidden;
+			flex-grow: 1;
+			position: relative;
 	}
 
 	&.menu-is-open {
-		overflow: hidden;
-
-		main {
 			overflow: hidden;
-			position: fixed;
-			inset: 0;
-		}
+
+			main {
+					overflow: hidden;
+					position: fixed;
+					inset: 0;
+			}
 	}
 }
 
-// .container {
-// 	padding: {right
-// 			left: 20px;leftleftleftleftleftleft
-// 	}
-// }
+.container {
+	padding: {
+			right: var(--width-grid-gutter);
+			left: var(--width-grid-gutter);
+	}
+}
 
-// .row {margin-right
-// 	margin-left: calc(-1 * (var(--width-grid-gutter)) / 2);margin-leftmargin-leftmargin-leftmargin-leftmargin-leftmargin-left
-// }
+.row {
+	margin-right: calc(-1 * (var(--width-grid-gutter)) / 2);
+	margin-left: calc(-1 * (var(--width-grid-gutter)) / 2);
+}
 
-// [class*='col-'] {padding-right
-// 	padding-left: calc(var(--width-grid-gutter) / 2);padding-leftpadding-leftpadding-leftpadding-leftpadding-leftpadding-left
-// }
+[class*='col-'] {
+	padding-right: calc(var(--width-grid-gutter) / 2);
+	padding-left: calc(var(--width-grid-gutter) / 2);
+}
+
+.collapse {
+	display: none;
+
+	&.show {
+			display: block;
+	}
+}
+
+.collapsing {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height var(--speed-default) ease-in-out;
+	will-change: max-height;
+}
+
+.fade {
+	opacity: 0;
+	transition: opacity .15s linear;
+
+	&.show {
+			opacity: 1;
+	}
+}
 
 *:focus {
-	outline: rgb(color(cola) 0.25) auto 5px;
+	// outline: rgba(color(cola), .25) auto 5px;
 }
 
 img {

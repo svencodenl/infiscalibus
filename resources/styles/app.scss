@@ -1,15 +1,18 @@
 // Config
+@import "config/variable-bootstrap";
+@import "config/external";
 @import "config/color";
-@import url("config/variables.scss");
-@import url("config/external");
+@import "config/variables";
 
 // Base
-// @import "base/font";
-// @import url("base/global");
-// @import url("base/typography");
+@import "base/global";
+@import "base/fonts";
+@import "base/typography";
 
 // // Components
-// @import "component/hero/homepage";
+@import "component/button";
 
 // // Element
-// @import "element/section";
+@import "element/section";
+@import "element/hero/homepage";
+@import "element/header/default";

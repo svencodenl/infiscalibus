@@ -1,83 +1,84 @@
 :root {
-	// Size
-	--size-custom-control-indicator: 30px;
-	--size-input: 50px;
+  // Size
+  --size-custom-control-indicator: 30px;
+  --size-input: 50px;
 
-	// Width
-	--width-grid-gutter: #{$grid-gutter-width};
+  // Width
+  --width-grid-gutter: #{$grid-gutter-width};
 
-	// Height
-	--height-btn: 40px;
+  // Height
+  --height-btn: 40px;
 
-	// Padding
-	--padding-button: 5px 15px;
-	--padding-input: 20px;
+  // Padding
+  --padding-button: 5px 40px;
+  --padding-input: 20px;
 
-	// Font size
-	--font-size-base: 14px;
+  // Font size
+  --font-size-base: 16px;
 
-	// Line height
-	--line-height-base: 24px;
+  // Line height
+  --line-height-base: 24px;
 
-	// Spacer
-	--spacer: 10px;
+  // Spacer
+  --spacer: 10px;
 
-	// Transition
-	--speed-fast: 0.125s;
-	--speed-default: 0.25s;
-	--speed-slow: 0.5s;
-	--speed-sluggish: 1s;
-	--speed-snail: 2s;
-	--cubic-bezier: cubic-bezier(0.05, 0.69, 0.14, 1);
-	--cubic-bezier-2: cubic-bezier(0.215, 0.61, 0.355, 1);
-	--cubic-bezier-3: cubic-bezier(0.45, 0.13, 0.33, 0.97);
-	--cubic-bezier-4: cubic-bezier(0.34, 1.56, 0.64, 1);
-	--cubic-bezier-5: cubic-bezier(0.19, 1, 0.22, 1);
+  // Transition
+  --speed-fast: 0.125s;
+  --speed-default: 0.25s;
+  --speed-slow: 0.5s;
+  --speed-sluggish: 1s;
+  --speed-snail: 2s;
+  --cubic-bezier: cubic-bezier(0.05, 0.69, 0.14, 1);
+  --cubic-bezier-2: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --cubic-bezier-3: cubic-bezier(0.45, 0.13, 0.33, 0.97);
+  --cubic-bezier-4: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --cubic-bezier-5: cubic-bezier(0.19, 1, 0.22, 1);
 
-	@include media-breakpoint-up(sm) {
-		//
-	}
+  @include media-breakpoint-up(sm) {
+    // sm
+  }
 
-	@include media-breakpoint-up(md) {
-		//
-	}
+  @include media-breakpoint-up(md) {
+    // md
+  }
 
-	@include media-breakpoint-up(lg) {
-		// Width
-		--width-grid-gutter: 20px;
+  @include media-breakpoint-up(lg) {
+    // Width
+    --width-grid-gutter: 20px;
 
-		// Height
-		--height-btn: 45px;
-	}
+    // Height
+    --height-btn: 45px;
+  }
 
-	@include media-breakpoint-up(xl) {
-		// Width
-		--width-grid-gutter: 25px;
+  @include media-breakpoint-up(xl) {
+    // Width
+    --width-grid-gutter: 25px;
 
-		// Height
-		--height-btn: 50px;
-	}
+    // Height
+    --height-btn: 50px;
+  }
 
-	@include media-breakpoint-up(xxl) {
-		// Size
-		--size-input: 60px;
+  @include media-breakpoint-up(xxl) {
+    // Size
+    --size-input: 60px;
 
-		// Width
-		--width-grid-gutter: 30px;
+    // Width
+    --width-grid-gutter: 30px;
 
-		// Font size
-		--font-size-base: 16px;
+    // Font size
+    --font-size-base: 19px;
 
-		// Line height
-		--line-height-base: 28px;
-	}
+    // Line height
+    --line-height-base: 28px;
+  }
 
-	@include media-breakpoint-up(fhd) {
-		// Height
-		--height-btn: 60px;
-	}
+  @include media-breakpoint-up(fhd) {
+    // Height
+    --height-btn: 60px;
+  }
 }
 
 // Fonts
-$font-path: "../fonts";
-$font-family-base: "Helvetica", sans-serif;
+$font-path: '../../fonts';
+$font-family-base: 'Helvetica Neue', sans-serif;
+$font-family-heading: 'ALbra', serif;
