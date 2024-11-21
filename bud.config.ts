@@ -72,7 +72,7 @@ export default async (bud: Bud) => {
 					`@roots/eslint-config/typescript`,
 					`plugin:react/jsx-runtime`,
 				])
-				.setFix(true)
+				.setFix(false)
 				.setFailOnWarning(bud.isProduction),
 		)
 
@@ -81,8 +81,8 @@ export default async (bud: Bud) => {
 		 */
 		.when(`stylelint` in bud, ({ stylelint }) =>
 			stylelint
-				.extends([`@roots/sage/stylelint-config`])
-				.setFix(true)
+				.extends([`@roots/bud-sass/config/stylelint`])
+				.setFix(false)
 				.setFailOnWarning(bud.isProduction),
 		);
 };
