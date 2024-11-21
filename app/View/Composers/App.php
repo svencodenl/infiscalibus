@@ -23,8 +23,8 @@ class App extends Composer
     public function with()
     {
         return [
-            'containerClasses' => 'max-w-5xl mx-auto',
-            'containerInnerClasses' => 'max-w-100vw',
+            'containerClasses' => '',
+            'containerInnerClasses' => '',
             'siteName' => $this->siteName(),
         ];
     }

@@ -43,6 +43,7 @@
 		"@popperjs/core": "^2.11.8",
 		"@roots/wordpress-hmr": "6.23.1",
 		"alpinejs": "3.14.1",
-		"bootstrap": "^5.3.3"
+		"bootstrap": "^5.3.3",
+		"destyle.css": "^4.0.1"
 	}
 }

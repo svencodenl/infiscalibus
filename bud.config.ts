@@ -55,10 +55,10 @@ export default async (bud: Bud) => {
 					right: `1.5rem`,
 				},
 			},
-			typography: {
-				fontFamily: `var(--wp--preset--font-family--sans)`,
-				fontSize: `var(--wp--preset--font-size--normal)`,
-			},
+			// typography: {
+			// 	fontFamily: `var(--wp--preset--font-family--sans)`,
+			// 	fontSize: `var(--wp--preset--font-size--normal)`,
+			// },
 		})
 		.setPath(bud.path(`public/dist/theme.json`));
 
