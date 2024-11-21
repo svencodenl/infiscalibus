@@ -30,7 +30,7 @@ class ACFServiceProvider extends SageServiceProvider
          * Register ACF save JSON filter.
          */
         add_filter('acf/settings/save_json', function($path): string {
-            $path = base_path() . '/config/acf';
+            $path = base_path() . '/resources/acf';
             return $path;
         });
 
@@ -38,7 +38,7 @@ class ACFServiceProvider extends SageServiceProvider
          * Register ACF load JSON filter.
          */
         add_filter('acf/settings/load_json', function($path): string {
-            $path = base_path() . '/config/acf';
+            $path = base_path() . '/resources/acf';
             return $path;
         });
     

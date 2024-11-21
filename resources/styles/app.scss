@@ -1,9 +1,15 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+// Config
+@import "config/color";
+@import url("config/variables.scss");
+@import url("config/external");
 
-@import "component/hero/homepage";
+// Base
+// @import "base/font";
+// @import url("base/global");
+// @import url("base/typography");
 
-.max-w-100vw {
-	max-width: 100vw;
-}
+// // Components
+// @import "component/hero/homepage";
+
+// // Element
+// @import "element/section";

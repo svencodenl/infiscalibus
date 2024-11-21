@@ -1,0 +1,130 @@
+body {
+	font: {
+		family: $font-family-base;
+		weight: 500;
+		size: var(--font-size-base);
+	}
+
+	line-height: var(--line-height-base);
+
+	b,
+	strong {
+		font-weight: 700;
+	}
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	text-rendering: optimizelegibility;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "liga", "kern";
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+	font-weight: 700;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	line-height: 1.4;
+}
+
+h1,
+.h1 {
+	@include heading(h1);
+}
+
+h2,
+.h2 {
+	@include heading(h2);
+}
+
+h3,
+.h3 {
+	@include heading(h3);
+}
+
+h4,
+.h4 {
+	@include heading(h4);
+}
+
+h5,
+.h5 {
+	@include heading(h5);
+}
+
+h6,
+.h6 {
+	@include heading(h6);
+}
+
+// Textual
+main {
+	p,
+	ul,
+	ol,
+	table {
+		&:not([class*="-none"]) {
+			+ *:not(.btn) {
+				margin-top: 15px;
+
+				@include media-breakpoint-up(xl) {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}
+
+// Anchors
+p a,
+ul li a,
+ol li a,
+small a,
+td a,
+.link {
+	&:not(.btn) {
+		font-weight: 700;
+		text-decoration: underline;
+	}
+}
+
+picture,
+figure {
+	figcaption {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-bottom: 0;
+			color: inherit;
+		}
+	}
+}

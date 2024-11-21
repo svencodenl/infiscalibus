@@ -62,10 +62,6 @@ export default async (bud: Bud) => {
 		})
 		.setPath(bud.path(`public/dist/theme.json`));
 
-	bud.when(`tailwind` in bud, ({ wpjson }) =>
-		wpjson.useTailwindColors().useTailwindFontFamily().useTailwindFontSize(),
-	);
-
 	await bud.tapAsync(sourceThemeValues);
 
 	bud
@@ -85,10 +81,7 @@ export default async (bud: Bud) => {
 		 */
 		.when(`stylelint` in bud, ({ stylelint }) =>
 			stylelint
-				.extends([
-					`@roots/sage/stylelint-config`,
-					`@roots/bud-tailwindcss/stylelint-config`,
-				])
+				.extends([`@roots/sage/stylelint-config`])
 				.setFix(true)
 				.setFailOnWarning(bud.isProduction),
 		);

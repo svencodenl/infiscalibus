@@ -1,0 +1,40 @@
+$colors: (
+	// Primary
+	blue-primary: #1d3155,
+	blue-light: #425578,
+	blue-dark: #0a1935,
+	orange: #fa650b,
+	// Secondary
+	background: #f5f2ef,
+	text: #27344b,
+	// Grayscale
+	cola: #000,
+	milk: #fff
+);
+
+// Color generation
+@function color($color) {
+	@if map-has-key($colors, $color) {
+		@return map-get($colors, $color);
+	}
+
+	@return null;
+}
+
+@each $name, $value in $colors {
+	.text-#{$name}
+
+ {
+		color: $value !important;
+
+		> * {
+			color: inherit;
+		}
+	}
+
+	.bg-#{$name}
+
+ {
+		background-color: $value !important;
+	}
+}
