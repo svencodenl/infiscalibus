@@ -29,7 +29,7 @@ class ACFServiceProvider extends SageServiceProvider
         /**
          * Register ACF save JSON filter.
          */
-        add_filter('acf/settings/save_json', function($path): string {
+        add_filter('acf/settings/save_json', function ($path): string {
             $path = base_path() . '/resources/acf';
             return $path;
         });
@@ -37,23 +37,33 @@ class ACFServiceProvider extends SageServiceProvider
         /**
          * Register ACF load JSON filter.
          */
-        add_filter('acf/settings/load_json', function($path): string {
+        add_filter('acf/settings/load_json', function ($path): string {
             $path = base_path() . '/resources/acf';
             return $path;
         });
-    
+
         /**
          * Adds an options page to the admin menu
          */
         add_action('acf/init', function () {
             if (function_exists('acf_add_options_page')) {
-                acf_add_options_page([
-                    'page_title' => 'Opties',
-                    'menu_title' => 'Opties',
+                // Add parent
+                $parent = acf_add_options_page([
+                    'page_title' => 'Thema Opties',
+                    'menu_title' => 'Thema Opties',
                     'menu_slug'  => 'site-options',
                     'capability' => 'edit_posts',
                     'redirect'   => false
                 ]);
+
+                // if (function_exists('acf_add_options_sub_page')) {
+                //     // Add sub page.
+                //     $child = acf_add_options_sub_page(array(
+                //         'page_title'  => __('Social Settings'),
+                //         'menu_title'  => __('Social'),
+                //         'parent_slug' => $parent['menu_slug'],
+                //     ));
+                // }
             }
         });
     }
