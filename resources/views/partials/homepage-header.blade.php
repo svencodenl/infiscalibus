@@ -10,8 +10,8 @@
       @if ($title = $hero['title'])
       <h1>{{ $title }}</h1>
       @endif
-      @if ($button = $hero['button'])
-      <button class="btn btn--orange-primary"><a href="{{ $button['url'] }}" target="{{ $button['target'] }}">{{ $button['title'] }}</a></button>
+      @if (($button = $hero['button']) && ($title = $hero['button']['title']) && ($url = $hero['button']['url']))
+      <button class="btn btn--orange-primary"><a href="{{ $url }}" target="{{ $button['target'] ?: '_blank' }}">{{ $title }}</a></button>
       @endif
     </div>
   </div>
