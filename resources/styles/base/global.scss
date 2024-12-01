@@ -74,3 +74,8 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+::selection {
+  color: color(white);
+  background: color(text);
+}

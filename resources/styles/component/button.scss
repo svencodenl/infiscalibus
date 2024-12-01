@@ -10,7 +10,7 @@
     size: var(--font-size-base);
   }
 
-  border-radius: 100px;
+  border-radius: 100%;
   line-height: 1;
   color: color(milk);
   white-space: nowrap;
@@ -29,12 +29,28 @@
   &.btn-ir {
     i {
       margin-left: 15px;
+      border: 1px solid black;
+      padding: 10px;
+      border-radius: 100%;
     }
   }
 
   &.btn-il {
     i {
       margin-right: 15px;
+    }
+  }
+
+  &.btn-ir,
+  &.btn-il {
+    transition: all var(--speed-default) var(--cubic-bezier);
+
+    &:not(:hover) {
+      opacity: .6;
+
+      i {
+        opacity: .5;
+      }
     }
   }
 

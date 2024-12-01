@@ -77,7 +77,7 @@ class Post extends Composer
     {
         return wp_link_pages([
             'echo' => 0,
-            'before' => '<p>'.__('Pages:', 'radicle'),
+            'before' => '<p>' . __('Pages:', 'radicle'),
             'after' => '</p>',
         ]);
     }

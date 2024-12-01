@@ -3,9 +3,16 @@ section.logo-slider {
 	margin-bottom: calc(var(--section-margin) / 2);
 	padding-bottom: calc(var(--section-margin) / 2);
 	
-  .heading {
-    max-width: calc(100% / 12 * 5);
-  }
+  .heading-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: clamp(20px, 3rem, 72px);
+
+		.heading {
+			max-width: calc(100% / 12 * 5);
+		}
+	}
 
   .logo-slider-container {
     .logo-slider-container-inner {
@@ -28,6 +35,7 @@ section.logo-slider {
         border-radius: 10px;
         position: relative;
 				transition: box-shadow var(--speed-fast) var(--cubic-bezier-2);
+				will-change: transform;
 
         img {
           position: relative;
@@ -49,9 +57,5 @@ section.logo-slider {
 				}
       }
     }
-
-		&:first-of-type {
-			margin-top: clamp(20px, 3rem, 72px);
-		}
   }
 }
