@@ -16,7 +16,7 @@ return [
         'partnerkantoor' => [
             'menu_icon' => 'dashicons-building',
             'menu_position' => 20,
-            'supports' => ['title', 'editor', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'names' => [
                 'singular' => 'Partnerkantoor',
@@ -27,7 +27,7 @@ return [
         'vacature' => [
             'menu_icon' => 'dashicons-text-page',
             'menu_position' => 20,
-            'supports' => ['title', 'editor', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'names' => [
                 'singular' => 'Vacature',
@@ -38,7 +38,7 @@ return [
         'evenement' => [
             'menu_icon' => 'dashicons-tickets',
             'menu_position' => 20,
-            'supports' => ['title', 'editor', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'names' => [
                 'singular' => 'Evenement',
@@ -49,7 +49,7 @@ return [
         'bestuur' => [
             'menu_icon' => 'dashicons-groups',
             'menu_position' => 20,
-            'supports' => ['title', 'editor', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'names' => [
                 'singular' => 'Bestuur',

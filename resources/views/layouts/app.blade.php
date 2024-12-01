@@ -13,7 +13,7 @@
   @php(wp_body_open())
 
   <div id="app">
-    @include('sections.header')
+    {{-- @include('sections.header') --}}
 
     <main id="main">
       <div class="{{ $containerInnerClasses }}">

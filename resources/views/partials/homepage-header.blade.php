@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero-homepage">
   @if ($hero = get_field('hero'))
   <div class="hero-bg">
     @if ($image = $hero['image'])
