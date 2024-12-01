@@ -16,6 +16,9 @@ export default async (bud: Bud) => {
 		.setPublicPath(`/dist/`)
 		.experiments(`topLevelAwait`, true)
 
+		.splitChunks()
+		.use(['@roots/bud-swc'])
+
 		.wpjson.setSettings({
 			color: {
 				custom: false,
@@ -85,6 +88,22 @@ export default async (bud: Bud) => {
 				.setFix(false)
 				.setFailOnWarning(bud.isProduction),
 		);
+
+		// Handle dynamic imports
+		bud.hooks.on('build.module.rules', (rules) => [
+			...rules,
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: 'swc-loader',
+			},
+		]);
+
+		// Disable lazy loading
+		// bud.hooks.on('dev.middleware.enabled', (middleware) => ({
+		// 	...middleware,
+		// 	lazyCompilation: false,
+		// }));
 };
 
 /**

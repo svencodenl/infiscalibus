@@ -20,7 +20,8 @@
   --line-height-base: 24px;
 
   // Spacer
-  --spacer: 10px;
+  --spacer: #{$spacer};
+  --section-margin: 100px;
 
   // Transition
   --speed-fast: 0.125s;
