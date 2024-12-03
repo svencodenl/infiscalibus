@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-	@include('partials.page-header')
+	{{-- @include('partials.page-header') --}}
+	<h1>index.blade.php</h1>
 
 	@if (! have_posts())
 		<x-alert type="warning">

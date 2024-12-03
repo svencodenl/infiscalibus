@@ -1,7 +1,7 @@
 section.logo-slider {
-	margin-top: var(--section-margin);
-	margin-bottom: calc(var(--section-margin) / 2);
-	padding-bottom: calc(var(--section-margin) / 2);
+	margin-top: calc(var(--section-padding) / 2);
+	margin-bottom: calc(var(--section-padding) / 2);
+	padding-bottom: calc(var(--section-padding) / 2);
 	
   .heading-container {
 		display: flex;
@@ -10,7 +10,7 @@ section.logo-slider {
 		margin-bottom: clamp(20px, 3rem, 72px);
 
 		.heading {
-			max-width: calc(100% / 12 * 5);
+			width: calc(100% / 12 * 5);
 		}
 	}
 
@@ -44,17 +44,20 @@ section.logo-slider {
           max-height: 150px;
         }
 
-        a {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-        }
-
 				&:hover {
 					box-shadow: 0 0 35px rgb(0 0 0 / 10%);
 				}
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .heading-container {
+      flex-direction: column;
+      align-items: unset;
+
+      .heading {
+        width: 100%;
       }
     }
   }

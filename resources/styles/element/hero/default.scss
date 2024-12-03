@@ -1,11 +1,11 @@
 .hero-default {
 	display: flex;
 	align-items: center;
-	margin-bottom: clamp(50px, 7vh, 150px);
+	margin-bottom: calc(var(--section-padding) / 2);
 
   .container {
-		padding-top: clamp(50px, 6.5vh, 170px);
-		padding-bottom: clamp(50px, 6.5vh, 170px);
+		padding-top: calc(var(--section-padding) / 2);
+		padding-bottom: calc(var(--section-padding) / 2);
     display: flex;
 		align-items: center;
 		justify-content: space-between;

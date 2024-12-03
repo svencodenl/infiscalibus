@@ -1,0 +1,134 @@
+{
+    "key": "group_674ed74876d8b",
+    "title": "Vacatures",
+    "fields": [
+        {
+            "key": "field_674ed748225e6",
+            "label": "Hoort bij partnerkantoor",
+            "name": "matching_partnerkantoor",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "69": "ABAB",
+                "66": "Atlas",
+                "17": "Baker Tilly",
+                "72": "BDO",
+                "81": "Belastingdienst",
+                "78": "BOL",
+                "75": "Bonsen Reuling",
+                "84": "Countus",
+                "87": "CROP",
+                "94": "Deloitte",
+                "90": "Dirkzwager",
+                "97": "DTS",
+                "53": "EY",
+                "100": "Flynth",
+                "57": "Grant Thornton",
+                "60": "Newtone",
+                "63": "Van Doorne"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_674edc9235979",
+            "label": "Locaties",
+            "name": "locations",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Nieuwe locatie",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_674edd254b2ce",
+                    "label": "Naam",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_674edc9235979"
+                }
+            ]
+        },
+        {
+            "key": "field_674edc9d3597a",
+            "label": "Uren per week",
+            "name": "hours_per_week",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "vacature"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1733236136
+}

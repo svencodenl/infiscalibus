@@ -27,7 +27,7 @@ return [
         'vacature' => [
             'menu_icon' => 'dashicons-text-page',
             'menu_position' => 20,
-            'supports' => ['title', 'editor', 'revisions', 'thumbnail', 'excerpt'],
+            'supports' => ['title', 'editor', 'revisions', 'thumbnail'],
             'show_in_rest' => true,
             'names' => [
                 'singular' => 'Vacature',

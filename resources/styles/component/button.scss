@@ -29,7 +29,7 @@
   &.btn-ir {
     i {
       margin-left: 15px;
-      border: 1px solid black;
+      border: 1px solid color(text);
       padding: 10px;
       border-radius: 100%;
     }
@@ -44,12 +44,13 @@
   &.btn-ir,
   &.btn-il {
     transition: all var(--speed-default) var(--cubic-bezier);
+    padding: unset;
 
     &:not(:hover) {
-      opacity: .6;
+      opacity: 0.6;
 
       i {
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }
@@ -71,6 +72,16 @@
     &.btn--#{$name} {
       background-color: color($name);
       color: color(white);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 0;
+    justify-content: start;
+    margin-top: 1rem;
+
+    &.btn-ir i {
+      padding: 10px 8px;
     }
   }
 }
