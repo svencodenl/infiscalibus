@@ -76,12 +76,14 @@
   }
 
   @include media-breakpoint-down(md) {
-    padding: 0;
-    justify-content: start;
-    margin-top: 1rem;
+    &.btn-ir {
+      padding: 0;
+      justify-content: start;
+      margin-top: 1rem;
 
-    &.btn-ir i {
-      padding: 10px 8px;
+      i {
+        padding: 10px 8px;
+      }
     }
   }
 }

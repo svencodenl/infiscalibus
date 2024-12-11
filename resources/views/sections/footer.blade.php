@@ -1,7 +1,14 @@
 <footer class="footer">
 	<div class="container d-flex justify-content-center">
-		<div class="footer-banner">
-			<h1>Banner</h1>
+		<div class="footer-banner" 
+			@if($image = get_field('banner_image', 'option')['url']) style="background-image: url({{ $image }})" @endif
+		>
+			@if($text = get_field('banner_text', 'option'))
+				<h3 class="heading">{{ $text }}</h3>
+			@endif
+			@if($button = get_field('banner_button', 'option'))
+				<a href="{{ $button['link'] }}"><button class="btn btn--orange-primary">{{ $button['label'] }}</button></a>
+			@endif
 		</div>
 	</div>
 	<div class="footer-content">

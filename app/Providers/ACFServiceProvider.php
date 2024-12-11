@@ -49,21 +49,21 @@ class ACFServiceProvider extends SageServiceProvider
             if (function_exists('acf_add_options_page')) {
                 // Add parent
                 $parent = acf_add_options_page([
-                    'page_title' => 'Thema Opties',
-                    'menu_title' => 'Thema Opties',
+                    'page_title' => 'Thema opties',
+                    'menu_title' => 'Thema opties',
                     'menu_slug'  => 'site-options',
                     'capability' => 'edit_posts',
                     'redirect'   => false
                 ]);
 
-                // if (function_exists('acf_add_options_sub_page')) {
-                //     // Add sub page.
-                //     $child = acf_add_options_sub_page(array(
-                //         'page_title'  => __('Social Settings'),
-                //         'menu_title'  => __('Social'),
-                //         'parent_slug' => $parent['menu_slug'],
-                //     ));
-                // }
+                if (function_exists('acf_add_options_sub_page')) {
+                    // Add sub page.
+                    $child = acf_add_options_sub_page(array(
+                        'page_title'  => __('Footer opties'),
+                        'menu_title'  => __('Footer'),
+                        'parent_slug' => $parent['menu_slug'],
+                    ));
+                }
             }
         });
 
