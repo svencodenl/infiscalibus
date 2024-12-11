@@ -50,7 +50,8 @@ class Post extends Composer
         }
 
         if (is_archive()) {
-            return get_the_archive_title();
+            $postType = get_queried_object();
+            return esc_html($postType->labels->name);
         }
 
         if (is_search()) {

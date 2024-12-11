@@ -1,5 +1,3 @@
-{{-- props: $vacatures_list --}}
-
 <section class="section section-vacatures-list">
 	<div class="container">
 		<div class="heading">
@@ -7,13 +5,10 @@
 		</div>
 		<div class="vacature-list">
 			@foreach ($vacatures_list as $item)
-			<x-vacature-item
-				:title="$item->post_title"
+			<x-vacature-item :title="$item->post_title"
 				:image="wp_get_attachment_image_src( get_post_thumbnail_id(), 'single-post-thumbnail' )[0]"
-				:locations="get_field('locations', $item->ID)"
-				:hours="get_field('hours_per_week', $item->ID)"
-				:permalink="get_post_permalink($item->ID)"
-			/>
+				:locations="get_field('locations', $item->ID)" :hours="get_field('hours_per_week', $item->ID)"
+				:permalink="get_post_permalink($item->ID)" />
 			@endforeach
 		</div>
 		<div class="button-container">

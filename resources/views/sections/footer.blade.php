@@ -1,16 +1,26 @@
-<footer class="{{ $containerClasses }} mt-12">
-    <div class="{{ $containerInnerClasses }}">
-        @php(dynamic_sidebar('sidebar-footer'))
-
-        <p class="my-6">
-            <a href="https://www.superchargedagency.com/" class="flex items-center gap-1 font-bold hover:text-underline">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2877.6 2877.6" style="width: 2rem; height: 2rem; margin-left: -0.75rem;">
-                    <g id="Logo">
-                      <polygon class="cls-1" style="stroke-width: 0px;" points="1372.89 2207.78 1850.76 1274.02 1521.19 1274.02 1521.19 669.82 1026.85 1603.58 1372.89 1603.58 1372.89 2207.78"/>
-                    </g>
-                  </svg>
-                Built by Supercharged
-            </a>
-        </p>
-    </div>
+<footer class="footer">
+	<div class="container d-flex justify-content-center">
+		<div class="footer-banner">
+			<h1>Banner</h1>
+		</div>
+	</div>
+	<div class="footer-content">
+		<div class="container d-flex">
+			<div class="col-25">Logo</div>
+			<div class="col-25">Sitemap</div>
+			<div class="col-25">Actueel</div>
+			<div class="col-25">Adres</div>
+			<div class="col-25">Socials</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="copyright-text">
+			<p>&copy; {{ date('Y') }} F.S.V. In Fiscalibus</p>
+		</div>
+		<div class="copyright-links">
+			<a href="#">Algemene voorwaarden</a>
+			<a href="#">Privacy policy</a>
+			<a href="#">Disclaimer</a>
+		</div>
+	</div>
 </footer>
