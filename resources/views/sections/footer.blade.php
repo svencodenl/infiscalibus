@@ -13,11 +13,15 @@
 	</div>
 	<div class="footer-content">
 		<div class="container">
-			<div class="col-25">Logo</div>
-			<div class="col-25">Sitemap</div>
-			<div class="col-25">Actueel</div>
-			<div class="col-25">Adres</div>
-			<div class="col-25">Socials</div>
+			<div class="col-25 footer-col-logo">
+				@if($logo = get_field('logo_light', 'option')['url'])
+					<img src="{{ $logo }}" alt="F.S.V. In Fiscalibus">
+				@endif
+			</div>
+			<div class="col-25 footer-col-sitemap">Sitemap</div>
+			<div class="col-25 footer-col-actueel">Actueel</div>
+			<div class="col-25 footer-col-contact">Contact</div>
+			<div class="col-25 footer-col-socials">Socials</div>
 		</div>
 	</div>
 	<div class="footer-copyright">

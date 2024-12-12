@@ -81,10 +81,13 @@ footer.footer {
 
 		.container {
 			display: flex;
+			justify-content: space-between;
 		}
 
-		.col-25 {
-			width: 25%;
+		.footer-col-logo {
+			img {
+				max-width: 200px;
+			}
 		}
 
 		@include media-breakpoint-down(md) {

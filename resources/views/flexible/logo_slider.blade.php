@@ -1,12 +1,13 @@
 @php
 // Get all published posts from CPT partnerkantoor
 $post_type = 'partnerkantoor';
-$query = new WP_Query(array(
+$args = array(
 'post_type' => $post_type,
 'post_status' => 'publish',
 'orderby' => 'rand',
 'posts_per_page' => -1
-));
+);
+$posts = get_posts($args);
 
 global $wp_post_types;
 $cpt_label = &$wp_post_types[$post_type]->labels->name;
@@ -28,32 +29,30 @@ $cpt_label = &$wp_post_types[$post_type]->labels->name;
 		</div>
 		<div class="logo-slider-container">
 			<div class="logo-slider-container-inner">
-				@while ($query->have_posts())
-				@php $query->the_post(); $post_id = get_the_ID(); @endphp
-				@if ($post_id % 2 == 0)
-				@if ($image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' ))
+				@foreach ($posts as $post)
+				@if ($post->ID % 2 == 0)
+				@if ($image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ))
 				<div class="logo-slider-item">
 					<img src="{{ $image[0] }}" alt="{{ get_the_title() }}">
 					<a class="overlay-link" href="{{ get_permalink() }}"></a>
 				</div>
 				@endif
 				@endif
-				@endwhile
+				@endforeach
 			</div>
 		</div>
 		<div class="logo-slider-container">
 			<div class="logo-slider-container-inner">
-				@while ($query->have_posts())
-				@php $query->the_post(); $post_id = get_the_ID(); @endphp
-				@if ($post_id % 2 != 0)
-				@if ($image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' ))
+				@foreach ($posts as $post)
+				@if ($post->ID % 2 != 0)
+				@if ($image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ))
 				<div class="logo-slider-item">
 					<img src="{{ $image[0] }}" alt="{{ get_the_title() }}">
 					<a class="overlay-link" href="{{ get_permalink() }}"></a>
 				</div>
 				@endif
 				@endif
-				@endwhile
+				@endforeach
 			</div>
 		</div>
 	</div>

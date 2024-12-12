@@ -58,8 +58,8 @@
 	@include media-breakpoint-down(md) {
 		min-height: unset;
 		padding: {
-			top: var(--section-margin);
-			bottom: var(--section-margin);
+			top: var(--section-padding);
+			bottom: var(--section-padding);
 		}
 
 		.hero-content {
