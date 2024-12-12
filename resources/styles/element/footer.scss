@@ -54,14 +54,15 @@ footer.footer {
 		}
 
 		@include media-breakpoint-down(md) {
-			--height-banner: auto; 
+			--height-banner: auto;
 
+			flex-direction: column;
 			width: 100%;
-			display: block;
 			padding: 2rem;
 
 			.heading {
 				max-width: unset;
+				text-align: center;
 			}
 
 			.btn {
@@ -78,8 +79,26 @@ footer.footer {
 		border-radius: 0 0 var(--border-radius) var(--border-radius);
 		z-index: 2;
 
+		.container {
+			display: flex;
+		}
+
 		.col-25 {
 			width: 25%;
+		}
+
+		@include media-breakpoint-down(md) {
+			--section-padding: 50px;
+			
+			padding-top: var(--section-padding);
+
+			.container {
+				display: block;
+			}
+
+			.col-25 {
+				width: 100%;
+			}
 		}
 	}
 
@@ -109,5 +128,17 @@ footer.footer {
 				margin-right: 3em;
 			}
 		}
+
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+
+			.copyright-links {
+				display: flex;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		--border-radius: 25px;
 	}
 }

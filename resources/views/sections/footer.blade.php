@@ -12,7 +12,7 @@
 		</div>
 	</div>
 	<div class="footer-content">
-		<div class="container d-flex">
+		<div class="container">
 			<div class="col-25">Logo</div>
 			<div class="col-25">Sitemap</div>
 			<div class="col-25">Actueel</div>
