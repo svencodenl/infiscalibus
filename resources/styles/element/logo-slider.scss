@@ -16,10 +16,15 @@ section.logo-slider {
 
   .logo-slider-container {
     .logo-slider-container-inner {
-			margin-left: -250px;
       display: flex;
       align-items: center;
-      width: 10000px;
+      width: calc(10 * 100vw);
+
+      @each $breakpoint, $container-max-width in $container-max-widths {
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+            margin-left: calc(-1 * (100vw - $container-max-width) / 2);
+        }
+      }
 
       .logo-slider-item {
         width: 100%;
@@ -47,11 +52,24 @@ section.logo-slider {
 				&:hover {
 					box-shadow: 0 0 35px rgb(0 0 0 / 10%);
 				}
+
+        @include media-breakpoint-down(md) {
+          max-width: 200px;
+          max-height: 140px;
+          padding: 2rem;
+
+          img {
+            max-width: 150px;
+            max-height: 80px;
+          }
+        }
       }
     }
   }
 
   @include media-breakpoint-down(md) {
+    padding-bottom: 0;
+    
     .heading-container {
       flex-direction: column;
       align-items: unset;
