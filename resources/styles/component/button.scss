@@ -26,6 +26,10 @@
     filter: brightness(1.1);
   }
 
+  &[class*="outline"] {
+    border-width: 1px;
+  }
+
   &.btn-ir {
     i {
       margin-left: 15px;
@@ -72,6 +76,14 @@
     &.btn--#{$name} {
       background-color: color($name);
       color: color(white);
+    }
+
+    &.btn--outline-#{$name} {
+      border-color: color($name);
+
+      &:hover {
+        background-color: color($name);
+      }
     }
   }
 

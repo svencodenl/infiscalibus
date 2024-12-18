@@ -13,12 +13,10 @@
   @php(wp_body_open())
 
   <div id="app">
-    {{-- @include('sections.header') --}}
-
+    @include('sections.navbar')
+    
     <main id="main">
-      <div class="{{ $containerInnerClasses }}">
-        @yield('content')
-      </div>
+      @yield('content')
     </main>
 
     @include('sections.footer')

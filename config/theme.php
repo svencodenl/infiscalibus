@@ -8,6 +8,7 @@ return [
      */
     'menus' => [
         'primary_navigation' => __('Primary Navigation', 'radicle'),
+        'top_navigation' => __('Top Navigation', 'radicle'),
         'footer_navigation' => __('Footer Navigation', 'radicle'),
     ],
 

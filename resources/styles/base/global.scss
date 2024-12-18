@@ -12,6 +12,13 @@ body {
 			overflow-x: hidden;
 			flex-grow: 1;
 			position: relative;
+			padding-top: 5em;
+	}
+
+	&.home {
+		main {
+			padding-top: 0;
+		}
 	}
 
 	&.menu-is-open {

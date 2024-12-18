@@ -35,8 +35,8 @@ $cpt_label = &$wp_post_types[$post_type]->labels->name;
 				@if ($post->ID % 2 == 0)
 				@if ($image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ))
 				<div class="logo-slider-item">
-					<img src="{{ $image[0] }}" alt="{{ get_the_title() }}">
-					<a class="overlay-link" href="{{ get_permalink() }}"></a>
+					<img src="{{ $image[0] }}" alt="{{ get_the_title($post->ID) }}">
+					<a class="overlay-link" href="{{ get_permalink($post->ID) }}"></a>
 				</div>
 				@endif
 				@endif
@@ -49,8 +49,8 @@ $cpt_label = &$wp_post_types[$post_type]->labels->name;
 				@if ($post->ID % 2 != 0)
 				@if ($image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ))
 				<div class="logo-slider-item">
-					<img src="{{ $image[0] }}" alt="{{ get_the_title() }}">
-					<a class="overlay-link" href="{{ get_permalink() }}"></a>
+					<img src="{{ $image[0] }}" alt="{{ get_the_title($post->ID) }}">
+					<a class="overlay-link" href="{{ get_permalink($post->ID) }}"></a>
 				</div>
 				@endif
 				@endif

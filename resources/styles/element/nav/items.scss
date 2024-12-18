@@ -1,0 +1,111 @@
+/* stylelint-disable no-descending-specificity */
+.navbar {
+  .navbar-top,
+  .navbar-main {
+    a {
+      font-weight: 400;
+
+      &:not(:hover) {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .main-menu {
+    display: flex;
+    align-items: center;
+
+    .item {
+			&:not(.child) {
+				margin-left: 2rem;
+			}
+
+      &.parent {
+        position: relative;
+				padding-right: 5px;
+				margin-right: 10px;
+
+				.chevron {
+					position: absolute;
+					left: calc(100% - 5px);
+					top: calc(50% + 2px);
+					transform: translateY(-50%) rotate(90deg);
+					transition: all var(--animation-nav);
+					fill: color(text);
+				}
+
+				&:hover {
+					a {
+						text-decoration: none;
+					}
+				}
+      }
+
+      &.child {
+				color: color(text);
+
+				a {
+          padding: 0.25em 1em;
+          text-decoration: none;
+					transition: all var(--speed-default) var(--cubic-bezier);
+
+          &:hover {
+            background-color: rgba(39 52 75 / 10%);
+          }
+        }
+      }
+
+      a:not(.btn) {
+        display: inline-block;
+        width: 100%;
+      }
+
+			a {
+				font-size: 0.9em;
+			}
+
+      .menu-childs-container {
+        position: absolute;
+        left: 50%; /* relative to nearest positioned ancestor or body element */
+        transform: translateX(-50%); /* relative to element's height & width */
+        top: 100%;
+        padding-top: 20px;
+      }
+
+      .menu-childs {
+        position: relative;
+        background-color: color(background);
+        padding: 0.5em 0;
+        border-radius: 5px;
+        border: 1px solid color(border);
+        opacity: 0;
+        display: none;
+
+        &::after {
+          content: '';
+          width: 10px;
+          height: 10px;
+          background-color: color(border);
+          position: absolute;
+          left: 50%; /* relative to nearest positioned ancestor or body element */
+          transform: translateX(-50%) rotate(45deg); /* relative to element's height & width */
+          bottom: calc(100% - 5px);
+          z-index: -1;
+        }
+
+        .item {
+          + .item {
+            margin-top: 0.5em;
+          }
+        }
+      }
+
+      &:hover {
+        .menu-childs {
+          opacity: 1;
+          display: block;
+        }
+      }
+    }
+  }
+}
