@@ -1,0 +1,30 @@
+.card {
+	margin-bottom: var(--width-grid-gutter);
+	background-color: color(off-white);
+	overflow: hidden;
+	border-radius: 5px;
+	transition: box-shadow var(--speed-fast) var(--cubic-bezier-2);
+
+	&:hover {
+		box-shadow: 0 0 15px rgb(0 0 0 / 8%);
+	}
+
+	.img-wrapper {
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		background-color: color(white);
+		aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+		padding: 2.5rem 3.5rem;
+
+		img {
+			position: relative;
+			object-fit: contain;
+			max-width: 250px;
+			max-height: 150px;
+		}
+	}
+}
