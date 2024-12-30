@@ -16,7 +16,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			height: 100px;
+			height: var(--height-navbar);
 			transition: all var(--animation-nav);
 
 			.logo {

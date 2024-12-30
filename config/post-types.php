@@ -51,6 +51,8 @@ return [
             'menu_position' => 20,
             'supports' => ['title', 'editor', 'revisions', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
+            'exclude_from_search' => true,
+            'query_var'           => false,
             'names' => [
                 'singular' => 'Bestuur',
                 'plural' => 'Bestuur',

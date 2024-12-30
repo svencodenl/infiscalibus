@@ -9,8 +9,8 @@ body {
 	background-color: color(background);
 
 	main {
-			overflow-x: hidden;
-			flex-grow: 1;
+			// overflow-x: hidden;
+			// flex-grow: 1;
 			position: relative;
 			padding-top: 5em;
 	}
@@ -21,15 +21,15 @@ body {
 		}
 	}
 
-	&.menu-is-open {
-			overflow: hidden;
+	// &.menu-is-open {
+	// 		overflow: hidden;
 
-			main {
-					overflow: hidden;
-					position: fixed;
-					inset: 0;
-			}
-	}
+	// 		main {
+	// 				overflow: hidden;
+	// 				position: fixed;
+	// 				inset: 0;
+	// 		}
+	// }
 }
 
 .container {

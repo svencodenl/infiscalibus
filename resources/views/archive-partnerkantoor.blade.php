@@ -7,7 +7,7 @@
 	<div class="row">
 		@while(have_posts()) @php(the_post())
 		{{-- @includeFirst(['partials.content-' . get_post_type(), 'partials.content']) --}}
-		<div class="col-4">
+		<div class="col-md-4 col-6">
 			<div class="card">
 				<a href="{{ get_permalink() }}">
 					<div class="img-wrapper">
