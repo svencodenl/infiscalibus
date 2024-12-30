@@ -15,7 +15,8 @@ body {
 			padding-top: 5em;
 	}
 
-	&.home {
+	&.home,
+	&.post-type-archive-bestuur {
 		main {
 			padding-top: 0;
 		}

@@ -38,7 +38,8 @@
 				}
 			}
 	
-			.home & {
+			.home &,
+			.post-type-archive-bestuur & {
 				color: color(white);
 
 				.item.parent .chevron {

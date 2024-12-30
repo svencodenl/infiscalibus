@@ -1,0 +1,40 @@
+.hero-bestuur {
+	display: flex;
+	align-items: center;
+	padding: calc(var(--height-navbar) + var(--height-navbartop) + 3rem) 0;
+	margin-bottom: calc(var(--section-padding) / 2);
+	background-color: color(blue-dark);
+
+  .container {
+		padding-top: calc(var(--section-padding) / 2);
+		padding-bottom: calc(var(--section-padding) / 2);
+  }
+
+	.text {
+		color: color(white);
+
+		.heading {
+			font-weight: 500;
+			font-size: 5rem;
+			margin-top: clamp(40px, 2.25rem, 1rem);
+		}
+
+		.breadcrumbs {
+			opacity: .6;
+
+			svg {
+				fill: color(white);
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: calc(var(--height-navbar) + var(--height-navbartop)) 0;
+
+		.text {
+			.heading {
+				font-size: 3rem;
+			}
+		}
+  }
+}

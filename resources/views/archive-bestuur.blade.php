@@ -11,12 +11,12 @@ $bestuur_items = get_posts([
 @extends('layouts.app')
 
 @section('content')
-@include('partials.page-header')
+@include('partials.bestuur-header')
 
 <section class="section section-bestuur">
 	<div class="container">
 		<div class="row">
-			<div class="col-3 anchor-nav">
+			<div class="col-md-3 anchor-nav">
 				<h4 class="heading">Besturen</h4>
 				<div class="anchors">
 					@foreach ($bestuur_items as $key => $item)
@@ -24,7 +24,7 @@ $bestuur_items = get_posts([
 					@endforeach
 				</div>
 			</div>
-			<div class="col-9">
+			<div class="col-md-9 bestuur-items">
 				@foreach ($bestuur_items as $key => $item)
 				<div class="bestuur-item" id="{{ str_replace(" ", "-", get_the_title($item->ID)) }}">
 					<div class="img-wrapper">
