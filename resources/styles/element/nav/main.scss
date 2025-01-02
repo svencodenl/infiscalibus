@@ -79,6 +79,13 @@
           }
         }
       }
+
+      @include media-breakpoint-up(md) {
+        .mobile-handler,
+        .navbar-top-mobile {
+          display: none;
+        }
+      }
     }
 
     @include media-breakpoint-down(md) {

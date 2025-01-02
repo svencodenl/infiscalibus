@@ -1,9 +1,9 @@
 @php
 $menuLocations = get_nav_menu_locations(); // Get our nav locations (set in our theme, usually functions.php)
-$primary_nav = wp_get_nav_menu_items($menuLocations['primary_navigation']);
+$primary_nav_guest = wp_get_nav_menu_items($menuLocations['primary_navigation']);
+$primary_nav_logged_in = wp_get_nav_menu_items($menuLocations['logged_in_navigation']);
+$primary_nav = is_user_logged_in() ? $primary_nav_logged_in : $primary_nav_guest;
 $nested_nav = recursive_mitems_to_array($primary_nav);
-
-// dd($nested_nav);
 @endphp
 
 <div class="navbar">

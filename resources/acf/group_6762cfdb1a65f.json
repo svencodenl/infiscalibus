@@ -3,27 +3,6 @@
     "title": "Menu",
     "fields": [
         {
-            "key": "field_6762cfdb3a9e0",
-            "label": "",
-            "name": "user_only",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Alleen voor leden",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_6762e61ac808d",
             "label": "",
             "name": "is_button",
@@ -63,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734534701
+    "modified": 1735835292
 }

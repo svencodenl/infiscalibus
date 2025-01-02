@@ -38,3 +38,20 @@ if ( ! function_exists( 'recursive_mitems_to_array' ) ) {
       return $bundle;
   }
 }
+
+/**
+ * Restricts access to pages with certain templates if user is not logged in
+ */
+add_action('template_redirect', function () {
+  // Array of restricted templates
+  $restricted_templates = ['template-custom.blade.php'];
+
+  // Get the current page template
+  $current_template = basename(get_page_template());
+
+  // Check if the user is not logged in and is accessing a restricted template
+  if (!is_user_logged_in() && in_array($current_template, $restricted_templates)) {
+      wp_redirect(wp_login_url(home_url())); // Redirect to the login page
+      exit;
+  }
+});
