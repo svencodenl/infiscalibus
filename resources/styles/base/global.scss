@@ -1,86 +1,88 @@
 button {
-	border: 0;
+  border: 0;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	background-color: color(background);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: color(background);
 
-	main {
-			// overflow-x: hidden;
-			// flex-grow: 1;
-			position: relative;
-			padding-top: 5em;
-	}
+  main {
+    flex-grow: 1;
+    position: relative;
+    padding-top: 5em;
 
-	&.home,
-	&.post-type-archive-bestuur {
-		main {
-			padding-top: 0;
-		}
-	}
+    @include media-breakpoint-down(md) {
+      overflow-x: hidden;
+    }
+  }
 
-	// &.menu-is-open {
-	// 		overflow: hidden;
+  &.home,
+  &.post-type-archive-bestuur {
+    main {
+      padding-top: 0;
+    }
+  }
 
-	// 		main {
-	// 				overflow: hidden;
-	// 				position: fixed;
-	// 				inset: 0;
-	// 		}
-	// }
+  &.menu-is-open {
+  		overflow: hidden;
+
+  		main {
+  				// position: fixed;
+  				inset: 0;
+  		}
+  }
 }
 
 .container {
-	padding: {
-			right: var(--width-grid-gutter);
-			left: var(--width-grid-gutter);
-	}
+  padding: {
+    right: var(--width-grid-gutter);
+    left: var(--width-grid-gutter);
+  }
 }
 
 .row {
-	margin-right: calc(-1 * (var(--width-grid-gutter)) / 2);
-	margin-left: calc(-1 * (var(--width-grid-gutter)) / 2);
+  margin-right: calc(-1 * (var(--width-grid-gutter)) / 2);
+  margin-left: calc(-1 * (var(--width-grid-gutter)) / 2);
 }
 
 [class*='col-'] {
-	padding-right: calc(var(--width-grid-gutter) / 2);
-	padding-left: calc(var(--width-grid-gutter) / 2);
+  padding-right: calc(var(--width-grid-gutter) / 2);
+  padding-left: calc(var(--width-grid-gutter) / 2);
 }
 
 .collapse {
-	display: none;
+  display: none;
 
-	&.show {
-			display: block;
-	}
+  &.show {
+    display: block;
+  }
 }
 
 .collapsing {
-	overflow: hidden;
-	max-height: 0;
-	transition: max-height var(--speed-default) ease-in-out;
-	will-change: max-height;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--speed-default) ease-in-out;
+  will-change: max-height;
 }
 
 .fade {
-	opacity: 0;
-	transition: opacity .15s linear;
+  opacity: 0;
+  transition: opacity 0.15s linear;
 
-	&.show {
-			opacity: 1;
-	}
+  &.show {
+    opacity: 1;
+  }
 }
 
 *:focus {
-	// outline: rgba(color(cola), .25) auto 5px;
+  // outline: rgba(color(cola), .25) auto 5px;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 ::selection {
@@ -89,9 +91,9 @@ img {
 }
 
 .overlay-link {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }

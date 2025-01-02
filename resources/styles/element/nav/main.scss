@@ -1,141 +1,217 @@
 .navbar {
-	position: fixed;
-	top: 0;
-	z-index: 100;
-	width: 100%;
-	transition: all var(--animation-nav);
-	
-	.navbar-main {
-		border-radius: 20px 20px 0 0;
-		position: relative;
-		z-index: 1;
-		border-bottom: 1px solid rgba(0 0 0 / 0%);
-		transition: all var(--animation-nav);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  transition: all var(--animation-nav);
 
-		.navbar-main-inner {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			height: var(--height-navbar);
-			transition: all var(--animation-nav);
+  .navbar-main {
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgba(0 0 0 / 0%);
+    transition: all var(--animation-nav);
 
-			.logo {
-				max-width: 210px;
-				position: relative;
-				display: flex;
-				align-items: center;
+    .navbar-main-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--height-navbar);
+      transition: all var(--animation-nav);
 
-				.logo-dark {
-					position: absolute;
-					left: 0;
-					opacity: 1;
-					transition: all var(--animation-nav);
-				}
+      .logo {
+        max-width: 210px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 999;
 
-				.logo-light {
-					opacity: 0;
-					transition: all var(--animation-nav);
-				}
-			}
-	
-			.home &,
-			.post-type-archive-bestuur & {
-				color: color(white);
+        .logo-dark {
+          position: absolute;
+          left: 0;
+          opacity: 1;
+          transition: all var(--animation-nav);
+          z-index: 999;
+        }
 
-				.item.parent .chevron {
-					fill: color(white);
-				}
+        .logo-light {
+          opacity: 0;
+          transition: all var(--animation-nav);
+          z-index: 999;
+        }
 
-				.logo {
-					.logo-dark {
-						opacity: 0;
-					}
+        @include media-breakpoint-down(md) {
+          max-width: 150px;
 
-					.logo-light {
-						opacity: 1;
-					}
-				}
-			}
-		}
-	}
-	
-	.navbar-top {
-		position: relative;
+          .menu-is-open & {
+            .logo-dark {
+              opacity: 1 !important;
+            }
 
-		.navbar-top-inner {
-			width: 100%;
-			display: flex;
-			justify-content: end;
-			align-items: center;
-			font-size: 14px;
-			padding-top: 1em;
-			padding-bottom: 1em;
-			line-height: 1;
-			color: color(white);
-			position: relative;
-		}
+            .logo-light {
+              opacity: 0 !important;
+            }
+          }
+        }
+      }
 
-		.corner {
-			position: absolute;
-			top: 100%;
-			width: 20px;
-			height: 20px;
-			display: flex;
-			z-index: 2;
-			transition: all var(--animation-nav);
+      .home &,
+      .post-type-archive-bestuur & {
+        color: color(white);
 
-			&.right {
-				right: 0;
-				transform: scaleX(-1);
-			}
+        .item.parent .chevron {
+          fill: color(white);
+        }
 
-			svg {
-				width: 100%;
-				fill: color(blue-primary)
-			}
-		}
+        .logo {
+          .logo-dark {
+            opacity: 0;
+          }
 
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: color(blue-primary);
-		}
-	}
+          .logo-light {
+            opacity: 1;
+          }
+        }
 
-	.scrolled-down & {
-		transform: translateY(calc(-1 * var(--height-navbartop)));
-		
-		.navbar-main {
-			border-radius: 0;
-			background-color: color(background);
-			border-color: rgba(color(text), 0.2); /* stylelint-disable-line color-function-notation */
+        @include media-breakpoint-down(md) {
+          .mobile-handler {
+            fill: color(white);
+          }
+        }
+      }
+    }
 
-			.navbar-main-inner {
-				color: color(text);
+    @include media-breakpoint-down(md) {
+      border-radius: unset;
 
-				.item.parent .chevron {
-					fill: color(text);
-				}
+      .mobile-handler {
+        z-index: 999;
+        fill: color(text);
+        transition: fill var(--animation-nav);
+      }
 
-				.logo {
-					.logo-dark {
-						opacity: 1;
-					}
+      .nav-primary {
+        transform: translateX(100%);
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: color(text);
+        padding: calc(var(--height-navbar) + 40px) var(--height-navbar)
+          var(--height-navbar) var(--height-navbar);
+        transition: all var(--animation-nav);
+      }
 
-					.logo-light {
-						opacity: 0;
-					}
-				}
-			}
-		}
+      .menu-is-open & {
+        .nav-primary {
+          transform: translateX(0);
+        }
 
-		.navbar-top .corner {
-			opacity: 0;
-		}
-	}
+        .mobile-handler {
+          fill: color(text) !important;
+        }
+      }
+    }
+  }
+
+  .navbar-top-mobile {
+    display: none;
+
+    @include media-breakpoint-down(md) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .navbar-top {
+    position: relative;
+
+    .navbar-top-inner {
+      width: 100%;
+      height: var(--height-navbartop);
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      font-size: 14px;
+      line-height: 1;
+      color: color(white);
+      position: relative;
+    }
+
+    .corner {
+      position: absolute;
+      top: 100%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      z-index: 2;
+      transition: all var(--animation-nav);
+
+      &.right {
+        right: 0;
+        transform: scaleX(-1);
+      }
+
+      svg {
+        width: 100%;
+        fill: color(blue-primary);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: color(blue-primary);
+    }
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  .scrolled-down & {
+    transform: translateY(calc(-1 * var(--height-navbartop)));
+
+    .navbar-main {
+      border-radius: 0;
+      background-color: color(background);
+      border-color: rgba(color(text), 0.2); /* stylelint-disable-line color-function-notation */
+
+      .navbar-main-inner {
+        color: color(text);
+
+        .item.parent .chevron {
+          fill: color(text);
+        }
+
+        .logo {
+          .logo-dark {
+            opacity: 1;
+          }
+
+          .logo-light {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .navbar-top .corner {
+      opacity: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      transform: unset;
+
+      .mobile-handler {
+        fill: color(text) !important;
+      }
+    }
+  }
 }
-

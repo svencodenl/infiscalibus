@@ -9,7 +9,7 @@
   // Height
   --height-btn: 40px;
   --height-navbartop: 42px;
-  --height-navbar: 100px;
+  --height-navbar: 60px;
 
   // Font size
   --font-size-base: 16px;
@@ -45,7 +45,8 @@
   }
 
   @include media-breakpoint-up(md) {
-    // md
+    --height-btn: 40px;
+    --height-navbar: 100px;
   }
 
   @include media-breakpoint-up(lg) {

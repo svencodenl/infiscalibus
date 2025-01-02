@@ -17,9 +17,9 @@
     
     <main id="main">
       @yield('content')
+      @include('sections.footer')
     </main>
 
-    @include('sections.footer')
   </div>
 
   @php(do_action('get_footer'))

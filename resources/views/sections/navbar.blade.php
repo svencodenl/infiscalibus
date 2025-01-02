@@ -10,7 +10,7 @@ $nested_nav = recursive_mitems_to_array($primary_nav);
 	@if (has_nav_menu('top_navigation'))
 	<div class="navbar-top">
 		<div class="container navbar-top-inner">
-			<nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('top_navigation') }}">
+			<nav class="nav-top" aria-label="{{ wp_get_nav_menu_name('top_navigation') }}">
 				{!! wp_nav_menu(['theme_location' => 'top_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
 			</nav>
 		</div>
@@ -41,6 +41,10 @@ $nested_nav = recursive_mitems_to_array($primary_nav);
 				@endif
 			</a>
 
+			<div class="mobile-handler">
+				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+			</div>
+
 			@if (has_nav_menu('primary_navigation'))
 			<nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
 				{{-- {!! wp_nav_menu(['name' => 'Mainmenu', 'sub_menu' => true, 'show_parent' => true, 'menu_class' => 'nav', 'echo' => false]) !!} --}}
@@ -63,6 +67,9 @@ $nested_nav = recursive_mitems_to_array($primary_nav);
 					</li>
 					@endforeach
 				</ul>
+				<div class="navbar-top-mobile">
+					{!! wp_nav_menu(['theme_location' => 'top_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
+				</div>
 			</nav>
 			@endif
 		</div>
