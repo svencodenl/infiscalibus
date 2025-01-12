@@ -1,8 +1,12 @@
 <section class="text-image">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 text-{{ get_sub_field('text_alignment') }}">{!! get_sub_field('text') !!}</div>
-			<div class="col-md-6"><img src="{{ get_sub_field('image')['url'] }}" alt="{{ get_sub_field('image')['title'] }}"></div>
+			@if ($text = get_sub_field('text'))
+				<div class="col-md-6 text-{{ get_sub_field('text_alignment') }}">{!! $text !!}</div>
+			@endif
+			@if ($image = get_sub_field('image'))
+				<div class="col-md-6"><img src="{{ $image['url'] }}" alt="{{ $image['title'] }}"></div>
+			@endif
 		</div>
 	</div>
 </section>
