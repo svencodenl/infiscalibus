@@ -74,7 +74,8 @@ add_action('template_redirect', function () {
   //
   // Restrict if not logged in
   //
-  $restricted_templates = ['template-custom.blade.php'];
+  // $restricted_templates = ['template-dashboard.blade.php'];
+  $restricted_templates = [''];
 
   // Check if the user is not logged in and is accessing a restricted template
   if (!is_user_logged_in() && in_array($current_template, $restricted_templates)) {
@@ -84,7 +85,7 @@ add_action('template_redirect', function () {
 
 
   //
-  // Restrict if reunist role
+  // Restrict if reunist role after log in
   //
   $user = wp_get_current_user();
 
