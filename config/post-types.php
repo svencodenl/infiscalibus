@@ -72,9 +72,9 @@ return [
     */
 
     'taxonomies' => [
-        'seed_category' => [
-            'post_types' => ['seed'],
-            'meta_box' => 'radio',
+        'evenement_category' => [
+            'post_types' => ['evenement'],
+            'meta_box' => 'simple',
             'names' => [
                 'singular' => 'Category',
                 'plural' => 'Categories',
