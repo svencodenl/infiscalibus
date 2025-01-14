@@ -97,6 +97,32 @@ class ACFServiceProvider extends SageServiceProvider
             // Return the field
             return $field;
         });
+
+        /**
+         * Dynamically populate select choices based on CPT's
+         */
+        add_filter('acf/load_field/name=event_partnerkantoren', function ($field) {
+            // Get the Text Area values from the options page without any formatting
+            $choices = get_posts([
+                'post_type'         => 'partnerkantoor',
+                'posts_per_page'    => -1,
+                'orderby'           => 'title',
+                'order'             => 'ASC'
+            ]);
+
+            // Loop through the array and add to field 'choices'
+            if (is_array($choices)) {
+
+                foreach ($choices as $choice) {
+
+                    $field['choices'][$choice->ID] = $choice->post_title;
+                }
+            }
+
+
+            // Return the field
+            return $field;
+        });
     }
 
     /**

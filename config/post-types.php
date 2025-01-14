@@ -72,12 +72,20 @@ return [
     */
 
     'taxonomies' => [
-        'evenement_category' => [
+        'category' => [
             'post_types' => ['evenement'],
             'meta_box' => 'simple',
             'names' => [
                 'singular' => 'Category',
                 'plural' => 'Categories',
+            ],
+        ],
+        'location' => [
+            'post_types' => ['evenement'],
+            'meta_box' => 'dropdown',
+            'names' => [
+                'singular' => 'Location',
+                'plural' => 'Locations',
             ],
         ],
     ],

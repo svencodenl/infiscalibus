@@ -1,0 +1,293 @@
+{
+    "key": "group_6784ee03cd6de",
+    "title": "Evenementen",
+    "fields": [
+        {
+            "key": "field_6784ee03ff7be",
+            "label": "Evenement datum & tijd",
+            "name": "event_date",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6784ee2dff7bf",
+                    "label": "Datum",
+                    "name": "date",
+                    "aria-label": "",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1,
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_6784ee94ff7c1",
+                    "label": "Hele dag",
+                    "name": "is_entire_day",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Dit evenement duurt de hele dag",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_6784ee73ff7c0",
+                    "label": "Begintijd",
+                    "name": "start_time",
+                    "aria-label": "",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6784ee94ff7c1",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H: i",
+                    "return_format": "H: i",
+                    "allow_in_bindings": 0
+                }
+            ]
+        },
+        {
+            "key": "field_6785677ecdd98",
+            "label": "Verkoop datum & tijd",
+            "name": "event_sale",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_678567be7786e",
+                    "label": "Begin verkoop",
+                    "name": "start_sale",
+                    "aria-label": "",
+                    "type": "date_time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y H:i",
+                    "return_format": "d\/m\/Y H:i",
+                    "first_day": 1,
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_678567ee7786f",
+                    "label": "Eind verkoop",
+                    "name": "end_sale",
+                    "aria-label": "",
+                    "type": "date_time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y H:i",
+                    "return_format": "d\/m\/Y H:i",
+                    "first_day": 1,
+                    "allow_in_bindings": 0
+                }
+            ]
+        },
+        {
+            "key": "field_678562cfa0bd7",
+            "label": "Reiskosten declaratie tekst",
+            "name": "declare_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67856538186c8",
+            "label": "Bijbehorende partnerkantoren",
+            "name": "event_partnerkantoren",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "69": "ABAB",
+                "66": "Atlas",
+                "17": "Baker Tilly",
+                "72": "BDO",
+                "81": "Belastingdienst",
+                "78": "BOL",
+                "75": "Bonsen Reuling",
+                "84": "Countus",
+                "87": "CROP",
+                "94": "Deloitte",
+                "90": "Dirkzwager",
+                "97": "DTS",
+                "53": "EY",
+                "100": "Flynth",
+                "57": "Grant Thornton",
+                "60": "Newtone",
+                "63": "Van Doorne"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "allow_in_bindings": 1,
+            "layout": "horizontal",
+            "toggle": 1,
+            "save_custom": 0,
+            "custom_choice_button_text": "Nieuwe keuze toevoegen"
+        },
+        {
+            "key": "field_678566f27314b",
+            "label": "Dresscode",
+            "name": "dresscode",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6785670c7314c",
+            "label": "Capaciteit",
+            "name": "capacity",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Indien leeg oneindige capaciteit voor dit evenement",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67856847088b9",
+            "label": "Extra uitleg locatie",
+            "name": "extra_location_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "evenement"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1736796269
+}
