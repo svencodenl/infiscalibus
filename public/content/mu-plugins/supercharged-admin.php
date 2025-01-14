@@ -97,3 +97,7 @@ add_action('template_redirect', function () {
     exit;
   }
 });
+
+
+// Remove admin bar for all users
+add_filter('show_admin_bar', '__return_false');
