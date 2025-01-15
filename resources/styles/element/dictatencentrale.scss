@@ -1,0 +1,43 @@
+.section-dictatencentrale {
+  .download-item {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: white;
+
+    .content {
+      .meta {
+        display: flex;
+        align-items: center;
+        margin-top: 0.2rem;
+        font-size: 0.75em;
+        opacity: 0.5;
+
+        .meta-item {
+          display: flex;
+          align-items: center;
+
+					svg {
+						opacity: .8;
+					}
+
+					span {
+						margin-left: 5px;
+					}
+
+          + .meta-item {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 15px rgb(0 0 0 / 8%);
+
+      .btn {
+        opacity: 1;
+      }
+    }
+  }
+}

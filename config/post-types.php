@@ -59,6 +59,17 @@ return [
                 'slug' => 'bestuur',
             ]
         ],
+        'dictatencentrale' => [
+            'menu_icon' => 'dashicons-media-document',
+            'menu_position' => 20,
+            'supports' => ['title', 'editor', 'revisions', 'excerpt'],
+            'show_in_rest' => true,
+            'names' => [
+                'singular' => 'Dictatencentrale',
+                'plural' => 'Dictatencentrale',
+                'slug' => 'dictatencentrale',
+            ]
+        ],
     ],
 
     /*
@@ -72,7 +83,7 @@ return [
     */
 
     'taxonomies' => [
-        'category' => [
+        'category-event' => [
             'post_types' => ['evenement'],
             'meta_box' => 'simple',
             'names' => [
@@ -86,6 +97,22 @@ return [
             'names' => [
                 'singular' => 'Location',
                 'plural' => 'Locations',
+            ],
+        ],
+        'vak-dictatencentrale' => [
+            'post_types' => ['dictatencentrale'],
+            'meta_box' => 'dropdown',
+            'names' => [
+                'singular' => 'Vak',
+                'plural' => 'Vakken',
+            ],
+        ],
+        'type-dictatencentrale' => [
+            'post_types' => ['dictatencentrale'],
+            'meta_box' => 'dropdown',
+            'names' => [
+                'singular' => 'Type',
+                'plural' => 'Types',
             ],
         ],
     ],

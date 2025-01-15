@@ -38,27 +38,6 @@
                     "allow_in_bindings": 0
                 },
                 {
-                    "key": "field_6784ee94ff7c1",
-                    "label": "Hele dag",
-                    "name": "is_entire_day",
-                    "aria-label": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "Dit evenement duurt de hele dag",
-                    "default_value": 0,
-                    "allow_in_bindings": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
                     "key": "field_6784ee73ff7c0",
                     "label": "Begintijd",
                     "name": "start_time",
@@ -83,6 +62,27 @@
                     "display_format": "H: i",
                     "return_format": "H: i",
                     "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_6784ee94ff7c1",
+                    "label": "Hele dag",
+                    "name": "is_entire_day",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Dit evenement duurt de hele dag",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 }
             ]
         },
@@ -110,9 +110,17 @@
                     "type": "date_time_picker",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6787c72013e2d",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
-                        "width": "50",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -129,9 +137,17 @@
                     "type": "date_time_picker",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6787c72013e2d",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
-                        "width": "50",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -139,6 +155,27 @@
                     "return_format": "d\/m\/Y H:i",
                     "first_day": 1,
                     "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_6787c72013e2d",
+                    "label": "Geen deadline",
+                    "name": "no_deadline",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Gebruikers kunnen zich aanmelden vanaf dat het evenement online staat tot het evenement begint",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Dit evenement heeft geen deadline",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 }
             ]
         },
@@ -232,7 +269,7 @@
             "name": "capacity",
             "aria-label": "",
             "type": "number",
-            "instructions": "Indien leeg oneindige capaciteit voor dit evenement",
+            "instructions": "Indien leeg oneindige capaciteit voor dit evenement en wordt het niet weergegeven",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -289,5 +326,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736796269
+    "modified": 1736951744
 }
