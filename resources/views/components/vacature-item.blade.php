@@ -5,7 +5,7 @@
 	</div>
 	@endif
 	<div class="content">
-		<div class="heading">
+		<div class="item-heading">
 			<span>{{ $title }}</span>
 		</div>
 		@if (isset($locations) || isset($hours))
