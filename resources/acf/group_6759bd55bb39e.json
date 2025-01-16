@@ -208,9 +208,31 @@
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
+                                    "key": "field_6788c6ce3ce92",
+                                    "label": "Titel",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6783abeae2095"
+                                },
+                                {
                                     "key": "field_6783abf3e2096",
-                                    "label": "Page",
-                                    "name": "page",
+                                    "label": "Link",
+                                    "name": "link",
                                     "aria-label": "",
                                     "type": "page_link",
                                     "instructions": "",
@@ -221,7 +243,9 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "post_type": "",
+                                    "post_type": [
+                                        "page"
+                                    ],
                                     "post_status": "",
                                     "taxonomy": "",
                                     "allow_archives": 1,
@@ -294,9 +318,31 @@
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
+                                    "key": "field_6788c6e8eea8e",
+                                    "label": "Titel",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6783ac259acf0"
+                                },
+                                {
                                     "key": "field_6783ac259acf1",
-                                    "label": "Page",
-                                    "name": "page",
+                                    "label": "Link",
+                                    "name": "link",
                                     "aria-label": "",
                                     "type": "page_link",
                                     "instructions": "",
@@ -307,7 +353,9 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "post_type": "",
+                                    "post_type": [
+                                        "page"
+                                    ],
                                     "post_status": "",
                                     "taxonomy": "",
                                     "allow_archives": 1,
@@ -377,5 +425,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736682690
+    "modified": 1737017112
 }
