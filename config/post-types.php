@@ -43,7 +43,7 @@ return [
             'names' => [
                 'singular' => 'Evenement',
                 'plural' => 'Evenementen',
-                'slug' => 'evenement',
+                'slug' => 'evenementen',
             ]
         ],
         'bestuur' => [

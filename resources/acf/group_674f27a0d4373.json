@@ -3,6 +3,24 @@
     "title": "Thema opties",
     "fields": [
         {
+            "key": "field_6788c96ad838a",
+            "label": "Pagina's die automatisch worden aangemaakt",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<ul>\r\n<li>Partnerkantoren: \/partnerkantoren<\/li>\r\n<li>Vacatures: \/vacatures<\/li>\r\n<li>Evenementen: \/evenementen<\/li>\r\n<li>Bestuurspagina: \/bestuur<\/li>\r\n<li>Dictatencentrale: \/dictatencentrale<\/li>\r\n<\/ul>\r\n\r\n<i>Om naar deze pagina's te verwijzen (in bijvoorbeeld het menu) dient er wel een Pagina aangemaakt te worden onder Pagina's met dezelfde naam.<\/i>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_674f27a084843",
             "label": "Logo",
             "name": "logo",
@@ -543,5 +561,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737017524
+    "modified": 1737018043
 }
