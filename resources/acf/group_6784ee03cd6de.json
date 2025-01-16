@@ -19,16 +19,37 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_6784ee94ff7c1",
+                    "label": "Hele dag",
+                    "name": "is_entire_day",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Dit evenement duurt de hele dag",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_6784ee2dff7bf",
-                    "label": "Datum",
-                    "name": "date",
+                    "label": "Begin datum",
+                    "name": "start_date",
                     "aria-label": "",
                     "type": "date_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -55,7 +76,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "33",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -64,25 +85,49 @@
                     "allow_in_bindings": 0
                 },
                 {
-                    "key": "field_6784ee94ff7c1",
-                    "label": "Hele dag",
-                    "name": "is_entire_day",
+                    "key": "field_6788d46145812",
+                    "label": "Eind datum",
+                    "name": "end_date",
                     "aria-label": "",
-                    "type": "true_false",
+                    "type": "date_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "message": "Dit evenement duurt de hele dag",
-                    "default_value": 0,
-                    "allow_in_bindings": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1,
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_6788d47c45813",
+                    "label": "Eind tijd",
+                    "name": "end_time",
+                    "aria-label": "",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6784ee94ff7c1",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H: i",
+                    "return_format": "H: i",
+                    "allow_in_bindings": 1
                 }
             ]
         },
@@ -287,9 +332,9 @@
             "append": ""
         },
         {
-            "key": "field_67856847088b9",
-            "label": "Extra uitleg locatie",
-            "name": "extra_location_text",
+            "key": "field_6788d67577d68",
+            "label": "Logistieke info",
+            "name": "logistic_info",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -326,5 +371,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736951744
+    "modified": 1737021058
 }
