@@ -74,7 +74,7 @@ add_action('template_redirect', function () {
   //
   // Restrict if not logged in
   //
-  $restricted_templates = ['template-dashboard.blade.php'];
+  $restricted_templates = ['template-dashboard.blade.php', 'archive-dictatencentrale.blade.php'];
 
   // Check if the user is not logged in and is accessing a restricted template
   if (!is_user_logged_in() && in_array($current_template, $restricted_templates)) {
@@ -101,8 +101,8 @@ add_action('template_redirect', function () {
 // Remove admin bar for all users
 add_filter('show_admin_bar', '__return_false');
 
-// Redirect single post to archive
 
+// Redirect single post to archive
 add_action('template_redirect', function () {
   if (is_singular('bestuur')) {
     wp_redirect(get_post_type_archive_link('bestuur'), 302);
