@@ -19,6 +19,40 @@
       height: var(--height-navbar);
       transition: all var(--animation-nav);
 
+      .left-side {
+        position: relative;
+
+        @include media-breakpoint-down(md) {
+          .menu-notification {
+            position: absolute;
+            top: calc(100% + 1rem);
+            left: 0;
+            width: fit-content;
+            text-wrap: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 999;
+            transform: translateX(150%);
+            transition: all var(--animation-nav);
+
+            .menu-is-open & {
+              opacity: 1;
+              pointer-events: all;
+              transform: translateX(0);
+            }
+          }
+        }
+
+        @include media-breakpoint-up(md) {
+          display: flex;
+          align-items: center;
+
+          a + a {
+            margin-left: 3rem;
+          }
+        }
+      }
+
       .logo {
         max-width: 210px;
         position: relative;

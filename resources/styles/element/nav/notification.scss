@@ -1,0 +1,37 @@
+.menu-notification {
+	display: flex;
+	align-items: center;
+  position: relative;
+  background-color: rgb(0 0 0 / 50%);
+  color: color(white);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem 0.25rem 2rem;
+	transition: background-color var(--speed-fast) var(--cubic-bezier-3);
+
+  i {
+    display: flex;
+    align-items: center;
+		margin-left: 1rem;
+
+    svg {
+      fill: color(white);
+    }
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: color(orange-primary);
+    border-radius: 100%;
+  }
+
+	&:hover {
+		background-color: rgb(0 0 0 / 75%);
+	}
+}
