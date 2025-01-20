@@ -133,8 +133,8 @@
         },
         {
             "key": "field_6785677ecdd98",
-            "label": "Verkoop datum & tijd",
-            "name": "event_sale",
+            "label": "Aanmelden datum & tijd",
+            "name": "event_register",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -149,8 +149,8 @@
             "sub_fields": [
                 {
                     "key": "field_678567be7786e",
-                    "label": "Begin verkoop",
-                    "name": "start_sale",
+                    "label": "Begin registreren",
+                    "name": "start_register",
                     "aria-label": "",
                     "type": "date_time_picker",
                     "instructions": "",
@@ -176,8 +176,8 @@
                 },
                 {
                     "key": "field_678567ee7786f",
-                    "label": "Eind verkoop",
-                    "name": "end_sale",
+                    "label": "Eind registreren",
+                    "name": "end_register",
                     "aria-label": "",
                     "type": "date_time_picker",
                     "instructions": "",
@@ -371,5 +371,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737021058
+    "modified": 1737390584
 }
