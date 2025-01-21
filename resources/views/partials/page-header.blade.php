@@ -16,7 +16,7 @@
       <p>{{ get_the_excerpt() }}</p>
       @endif
     </div>
-    @if ($image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'single-post-thumbnail' ))
+    @if (($image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'single-post-thumbnail' )) && !is_archive())
     <div class="image">
       <img src="{{ $image[0] }}" alt="{{ $title }}">
     </div>
