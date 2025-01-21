@@ -109,3 +109,41 @@ add_action('template_redirect', function () {
     exit;
   }
 });
+
+
+/**
+ * Check if allowed to register
+ */
+if (! function_exists('is_allowed_to_register_to_event')) {
+  /**
+   * @param $event_id
+   *
+   * @return boolean
+   */
+  function is_allowed_to_register_to_event($event_id)
+  {
+    $user = wp_get_current_user();
+    $is_allowed = false;
+
+    if (!is_user_logged_in())
+      return false;
+
+    $user_is_reunist = in_array('reunist', (array) $user->roles);
+
+    $allowed_to_view = get_field('reunist_select', $event_id); // no_reunist, both, only_reunist
+    if ($allowed_to_view == 'both')
+      $is_allowed = true;
+    elseif ($allowed_to_view == 'no_reunist' && $user_is_reunist)
+      $is_allowed = false;
+    elseif ($allowed_to_view == 'no_reunist' && !$user_is_reunist)
+      $is_allowed = true;
+    elseif ($allowed_to_view == 'only_reunist' && $user_is_reunist)
+      $is_allowed = true;
+    elseif ($allowed_to_view == 'only_reunist' && !$user_is_reunist)
+      $is_allowed = false;
+
+    // Check if max_capacity has been reached
+
+    return $is_allowed;
+  }
+}
