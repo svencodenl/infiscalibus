@@ -1,3 +1,10 @@
+@php
+$menuLocations = get_nav_menu_locations(); // Get our nav locations (set in our theme, usually functions.php)
+$copyright_nav_guest = wp_get_nav_menu_items($menuLocations['copyright_navigation']);
+$copyright_nav_logged_in = wp_get_nav_menu_items($menuLocations['copyright_logged_in_navigation']);
+$copyright_nav = is_user_logged_in() ? $copyright_nav_logged_in : $copyright_nav_guest;
+@endphp
+
 <footer class="footer">
 	<div class="container d-flex justify-content-center">
 		<div class="footer-banner" @if($image=get_field('banner_image', 'option' )['url'])
@@ -50,9 +57,9 @@
 			<p>&copy; {{ date('Y') }} F.S.V. In Fiscalibus</p>
 		</div>
 		<div class="copyright-links">
-			<a href="#">Algemene voorwaarden</a>
-			<a href="#">Privacy policy</a>
-			<a href="#">Disclaimer</a>
+			@foreach ($copyright_nav as $navitem)
+				<a href="{{ $navitem->url }}">{{ $navitem->title }}</a>
+			@endforeach
 		</div>
 	</div>
 </footer>

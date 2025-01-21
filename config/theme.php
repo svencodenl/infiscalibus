@@ -10,7 +10,8 @@ return [
         'primary_navigation' => __('Guest Navigation', 'radicle'),
         'logged_in_navigation' => __('Logged In Navigation', 'radicle'),
         'top_navigation' => __('Top Navigation', 'radicle'),
-        'footer_navigation' => __('Footer Navigation', 'radicle'),
+        'copyright_navigation' => __('Copyright Guest Navigation', 'radicle'),
+        'copyright_logged_in_navigation' => __('Copyright Logged In Navigation', 'radicle'),
     ],
 
     /**
