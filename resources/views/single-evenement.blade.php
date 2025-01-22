@@ -11,10 +11,10 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 	<div class="container">
 		<div class="row">
 			@while(have_posts()) @php(the_post())
-			<div class="col-md-7">
+			<div class="col-md-6">
 				@includeFirst(['partials.content-page', 'partials.content'])
 			</div>
-			<div class="col-md-5">
+			<div class="col-md-5 sidebar-container">
 				<div class="sidebar-inner">
 					{{-- Event date & time --}}
 					@if ($start_date = get_field('event_date_start_date'))
@@ -84,11 +84,16 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 
 					{{-- Partnerkantoren --}}
 					@if ($partnerkantoren = get_field('event_partnerkantoren'))
-					<p>Partnerkantoren:
+					<div class="sidebar-partnerkantoren">
+						<p>Partnerkantoren:</p>
 						@foreach($partnerkantoren as $key => $kantoor_id)
-						{{ get_the_title($kantoor_id) }}
+						<a href="{{ get_permalink($kantoor_id) }}" class="kantoor-item">
+							<div class="kantoor-logo">
+								<img src="{{ wp_get_attachment_image_src( get_post_thumbnail_id($kantoor_id), 'single-post-thumbnail' )[0] }}" alt="{{ get_the_title($kantoor_id) }}">
+							</div>
+						</a>
 						@endforeach
-					</p>
+					</div>
 					@endif
 
 					@if($show_register_button)
