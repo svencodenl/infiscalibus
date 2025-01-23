@@ -53,8 +53,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "d\/m\/Y",
-                    "return_format": "d\/m\/Y",
+                    "display_format": "j M. Y",
+                    "return_format": "j M. Y",
                     "first_day": 1,
                     "allow_in_bindings": 0
                 },
@@ -98,8 +98,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "d\/m\/Y",
-                    "return_format": "d\/m\/Y",
+                    "display_format": "j M. Y",
+                    "return_format": "j M. Y",
                     "first_day": 1,
                     "allow_in_bindings": 0
                 },
@@ -169,8 +169,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "d\/m\/Y H:i",
-                    "return_format": "d\/m\/Y H:i",
+                    "display_format": "j M. Y H:i",
+                    "return_format": "j M. Y H:i",
                     "first_day": 1,
                     "allow_in_bindings": 0
                 },
@@ -196,8 +196,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "d\/m\/Y H:i",
-                    "return_format": "d\/m\/Y H:i",
+                    "display_format": "j M. Y H:i",
+                    "return_format": "j M. Y H:i",
                     "first_day": 1,
                     "allow_in_bindings": 0
                 },
@@ -371,5 +371,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737390584
+    "modified": 1737645952
 }

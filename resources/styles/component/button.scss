@@ -60,15 +60,16 @@
   }
 
   &.btn-io {
+    --padding-button: 0;
+    --height-btn: 45px;
+
     width: var(--height-btn);
-    border-radius: 100%;
+    height: var(--height-btn);
+    border: 1px solid color(text);
+    transition: all var(--speed-default) var(--cubic-bezier);
 
-    .icon-chevron-right {
-      padding-left: 2px;
-    }
-
-    .icon-chevron-left {
-      padding-right: 2px;
+    &:not(:hover) {
+      opacity: 0.5;
     }
   }
 
