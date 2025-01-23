@@ -75,9 +75,9 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 					@endif
 
 					{{-- Location --}}
-					@if ($location = get_the_terms(get_the_ID(), 'location')[0])
-					<p>Location: {{ $location->name }}</p>
-					@if ($google_maps = get_field('google_maps', 'location' . '_' . $location->term_id))
+					@if ($location = get_the_terms(get_the_ID(), 'location'))
+					<p>Location: {{ $location[0]->name }}</p>
+					@if ($google_maps = get_field('google_maps', 'location' . '_' . $location[0]->term_id))
 					<pre>{{ var_dump($google_maps) }}</pre>
 					@endif
 					@endif

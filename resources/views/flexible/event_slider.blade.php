@@ -4,8 +4,9 @@ $post_type = 'evenement';
 $args = array(
 'post_type' => $post_type,
 'post_status' => 'publish',
-'orderby' => 'date',
-'order' => 'DESC',
+'meta_key' => 'event_date_start_date',
+'orderby' => 'meta_value',
+'order' => 'ASC',
 'posts_per_page' => 3
 );
 $posts = get_posts($args);
@@ -46,7 +47,7 @@ $cpt_label = &$wp_post_types[$post_type]->labels->name;
 							@if ($categories = get_the_terms($post->ID, 'category-event'))
 							<div class="meta-item meta-categories">
 								@foreach($categories as $cat)
-								<span class="category">{{ $cat->name }}</span>
+								<div class="category">{{ $cat->name }}</div>
 								@endforeach
 							</div>
 							@endif
