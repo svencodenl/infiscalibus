@@ -90,6 +90,17 @@ footer.footer {
 			}
 		}
 
+		.col-25 {
+			a {
+				font-weight: 400;
+				text-decoration: none;
+
+				&:not(:hover) {
+					opacity: .6;
+				}
+			}
+		}
+
 		@include media-breakpoint-down(md) {
 			--section-padding: 50px;
 			
