@@ -6,6 +6,8 @@
 
 # Any changes to the directives between these markers will be overwritten.
 
+
+// WORDPRESS
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -16,6 +18,14 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 
+// PUBLIC FOLDER REWRITE
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+# END WordPress
+
+// LARAVEL / RADICLE
 <FilesMatch ".+\.(blade\.php)$"> # Apache 2.4
 <IfModule mod_authz_core.c>
 Require all denied
@@ -28,5 +38,3 @@ Require all denied
     </IfModule>
 
 </FilesMatch>
-
-# END WordPress
