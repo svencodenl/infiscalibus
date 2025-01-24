@@ -73,7 +73,8 @@
 		"vlucas/phpdotenv": "^5.5",
 		"wpackagist-plugin/contact-form-7": "^6.0",
 		"wpackagist-plugin/safe-svg": "^2.1",
-		"wpengine/advanced-custom-fields-pro": "^6.3"
+		"wpengine/advanced-custom-fields-pro": "^6.3",
+		"yoast/wordpress-seo": "^24.3"
 	},
 	"require-dev": {
 		"johnbillion/query-monitor": "^3.12",
