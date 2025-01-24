@@ -147,3 +147,8 @@ if (! function_exists('is_allowed_to_register_to_event')) {
     return $is_allowed;
   }
 }
+
+// Disable re-auth
+add_filter('login_redirect', function($redirect_to, $requested_redirect_to, $user) {
+  return remove_query_arg(['reauth'], $redirect_to);
+}, 10, 3);
