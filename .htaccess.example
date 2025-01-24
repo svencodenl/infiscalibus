@@ -1,3 +1,17 @@
 RewriteEngine on
-RewriteCond %{REQUEST_URI} !public/
-RewriteRule ^(.*)$ /public/$1 [L]
+
+# Redirect all requests to the public folder unless already in public/
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
+
+# Secure .blade.php files to prevent direct access
+<FilesMatch ".+\.(blade\.php)$">
+    <IfModule mod_authz_core.c> # Apache 2.4
+        Require all denied
+    </IfModule>
+
+    <IfModule !mod_authz_core.c> # Apache 2.2
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
