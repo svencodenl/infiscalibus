@@ -20,31 +20,6 @@
       font-size: 5rem;
       margin-top: clamp(40px, 2.25rem, 1rem);
     }
-
-    .breadcrumbs {
-      display: flex;
-      align-self: center;
-
-      a {
-        opacity: 0.6;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-
-      svg {
-        transform: translateY(-2px);
-      }
-
-      span > span {
-        margin: 0 0.3rem;
-
-				&.breadcrumbs-home {
-					margin-left: none;
-				}
-      }
-    }
   }
 
   .image {

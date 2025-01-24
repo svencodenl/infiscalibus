@@ -1,0 +1,34 @@
+#breadcrumbs {
+	display: flex;
+	align-self: center;
+	color: color(text);
+
+	a {
+		opacity: 0.6;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	svg {
+		transform: translateY(-2px);
+		fill: color(text);
+	}
+
+	span > span {
+		margin: 0 0.3rem;
+
+		&.breadcrumbs-home {
+			margin-left: none;
+		}
+	}
+
+	.hero-dark & {
+		color: color(white);
+		
+		svg {
+			fill: color(white);
+		}
+	}
+}
