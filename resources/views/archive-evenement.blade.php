@@ -5,9 +5,13 @@
 
 <section class="section section-evenementen">
 	<div class="container">
-	@while(have_posts()) @php(the_post())
-		<a href="{{ get_post_permalink() }}">{{ the_title() }}</a>
-	@endwhile
+		<div class="event-slider-container">
+			<div class="event-slider-container-inner">
+				@while(have_posts()) @php(the_post())
+				<x-event-item :event="get_post()" />
+			@endwhile
+			</div>
+		</div>
 	</div>
 </section>
 
