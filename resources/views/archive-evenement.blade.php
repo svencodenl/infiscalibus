@@ -1,3 +1,16 @@
+@php
+// Get all published posts from CPT
+$post_type = 'evenement';
+$args = array(
+'post_type' => $post_type,
+'post_status' => 'publish',
+'meta_key' => 'event_date_start_date',
+'orderby' => 'meta_value',
+'order' => 'ASC',
+);
+$posts = get_posts($args);
+@endphp
+
 @extends('layouts.app')
 
 @section('content')
@@ -7,9 +20,9 @@
 	<div class="container">
 		<div class="event-slider-container">
 			<div class="event-slider-container-inner">
-				@while(have_posts()) @php(the_post())
-				<x-event-item :event="get_post()" />
-			@endwhile
+				@foreach ($posts as $event)
+					<x-event-item :event="$event" />
+				@endforeach
 			</div>
 		</div>
 	</div>

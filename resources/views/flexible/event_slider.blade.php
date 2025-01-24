@@ -1,5 +1,5 @@
 @php
-// Get all published posts from CPT partnerkantoor
+// Get all published posts from CPT
 $post_type = 'evenement';
 $args = array(
 'post_type' => $post_type,
