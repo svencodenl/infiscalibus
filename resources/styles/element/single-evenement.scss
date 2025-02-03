@@ -8,13 +8,31 @@
   .sidebar-container {
     position: relative;
   }
-
+  
   .sidebar-inner {
     position: sticky;
     top: calc(var(--height-navbar) + 1rem);
-    background-color: color(border);
+    background-color: rgba(color(border), .5); /* stylelint-disable-line color-function-notation */
     border-radius: 10px;
     padding: 1rem 1.5rem;
+    font-size: 16px;
+
+    .event-meta-item {
+      padding-bottom: 1rem;
+      
+      &:not(:last-child) {
+        margin-bottom: 1em;
+        border-bottom: 1px solid color(border);
+      }
+
+      .heading {
+        font-weight: 600;
+      }
+
+      .content {
+        margin-top: 0;
+      }
+    }
   }
 
   .sidebar-partnerkantoren {
