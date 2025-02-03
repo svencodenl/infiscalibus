@@ -124,8 +124,6 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 					</div>
 					@endif
 
-					<pre>{{ var_dump(wp_get_current_user()) }}</pre>
-
 					@if($show_register_button)
 					<form action="" method="post">
 						@csrf
