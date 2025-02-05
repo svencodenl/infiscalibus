@@ -180,7 +180,7 @@ if (! function_exists('is_already_registered_to_event')) {
       ]
     ]);
 
-    return $existing_registration ? true : false;
+    return $existing_registration[0]->ID ?? false;
   }
 }
 

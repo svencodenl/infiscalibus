@@ -33,6 +33,16 @@
         margin-top: 0;
       }
     }
+
+    form {
+      button {
+        width: 100%;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: 2rem;
+    }
   }
 
   .sidebar-partnerkantoren {

@@ -82,3 +82,50 @@ add_action('manage_event_registration_posts_custom_column', function ($column, $
 		echo get_post_meta($post_id, 'user_email', true);
 	}
 }, 10, 2);
+
+
+// Form action handles for deleting registration
+function handle_registration_deletion()
+{
+	if (isset($_POST['delete_registration'])) {
+		$registration_id = intval($_POST['registration_id']);
+		$nonce = $_POST['delete_registration_nonce'];
+
+		// Verify nonce
+		if (!wp_verify_nonce($nonce, 'delete_registration_' . $registration_id)) {
+			wp_die('Invalid request.');
+		}
+
+		// Attempt to delete the registration
+		if (secure_delete_event_registration($registration_id)) {
+			wp_redirect(add_query_arg('deleted', 'true', get_permalink()));
+			exit;
+		} else {
+			wp_die('Failed to delete registration.');
+		}
+	}
+}
+add_action('init', 'handle_registration_deletion');
+
+// Function to remove user from registration of specific event
+if (! function_exists('secure_delete_event_registration')) {
+	function secure_delete_event_registration($registration_id)
+	{
+		$registration = get_post($registration_id);
+
+		if ($registration && $registration->post_type === 'event_registration') {
+			$current_user_id = get_current_user_id();
+			$registration_user_id = get_post_meta($registration_id, 'user_id', true);
+
+			// Check if the current user is the owner or an admin
+			if ($current_user_id === intval($registration_user_id) || current_user_can('manage_options')) {
+				wp_delete_post($registration_id, true);
+				return true;
+			} else {
+				wp_die('You are not authorized to delete this registration.');
+			}
+		}
+
+		return false;
+	}
+}

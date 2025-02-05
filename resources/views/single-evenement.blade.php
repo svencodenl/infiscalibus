@@ -124,8 +124,12 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 					</div>
 					@endif
 
-					@if (is_already_registered_to_event(get_the_ID()))
-						<p>Already registered</p>
+					@if ($registration_id = is_already_registered_to_event(get_the_ID()))
+					<form method="post" action="">
+						<input type="hidden" name="registration_id" value="{{ $registration_id }}">
+						@php(wp_nonce_field('delete_registration_' . $registration_id, 'delete_registration_nonce'))
+						<button type="submit" name="delete_registration" class="btn btn--blue-primary">Afmelden</button>
+					</form>
 					@elseif($show_register_button)
 					<form action="" method="post">
 						@csrf
@@ -135,12 +139,15 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 						<input type="hidden" name="user_name" value="{{ wp_get_current_user()->user_nicename }}">
 						<input type="hidden" name="user_email" value="{{ wp_get_current_user()->user_email }}">
 						<button type="submit" class="btn btn--orange-primary">Meld je aan</button>
-						@if (isset($_GET['success']) && $_GET['success'] == 'true')
-						<p class="success-message">Je aanmelding is succesvol verwerkt!</p>
-						@endif
 					</form>
 					@endif
 
+					{{-- @if (isset($_GET['deleted']) && $_GET['deleted'] === 'true')
+					<p class="success-message">Registration successfully deleted.</p>
+					@endif
+					@if (isset($_GET['success']) && $_GET['success'] == 'true')
+					<p class="success-message">Je aanmelding is succesvol verwerkt!</p>
+					@endif --}}
 				</div>
 			</div>
 			@endwhile
