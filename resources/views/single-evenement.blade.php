@@ -124,7 +124,9 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 					</div>
 					@endif
 
-					@if($show_register_button)
+					@if (is_already_registered_to_event(get_the_ID()))
+						<p>Already registered</p>
+					@elseif($show_register_button)
 					<form action="" method="post">
 						@csrf
 						<!-- Bescherming tegen CSRF -->

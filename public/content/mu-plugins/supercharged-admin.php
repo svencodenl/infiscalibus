@@ -148,7 +148,43 @@ if (! function_exists('is_allowed_to_register_to_event')) {
   }
 }
 
+/**
+ * Check if already registered
+ */
+if (! function_exists('is_already_registered_to_event')) {
+  /**
+   * @param $event_id
+   *
+   * @return boolean
+   */
+  function is_already_registered_to_event($event_id)
+  {
+    $user = wp_get_current_user();
+
+    if (!is_user_logged_in())
+      return false;
+
+    $existing_registration = get_posts([
+      'post_type' => 'event_registration',
+      'meta_query' => [
+        [
+          'key' => 'event_id',
+          'value' => $event_id,
+          'compare' => '='
+        ],
+        [
+          'key' => 'user_id',
+          'value' => $user->ID,
+          'compare' => '='
+        ]
+      ]
+    ]);
+
+    return $existing_registration ? true : false;
+  }
+}
+
 // Disable re-auth
-add_filter('login_redirect', function($redirect_to, $requested_redirect_to, $user) {
+add_filter('login_redirect', function ($redirect_to, $requested_redirect_to, $user) {
   return remove_query_arg(['reauth'], $redirect_to);
 }, 10, 3);

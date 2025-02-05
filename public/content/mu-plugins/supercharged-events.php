@@ -22,7 +22,7 @@ add_action('init', function () {
 		$user_email = sanitize_email($_POST['user_email']);
 
 		// Controleer of de verplichte velden zijn ingevuld
-		if ($event_id && $user_name && $user_email) {
+		if ($event_id && $user_name && $user_id) {
 			// Controleer of de gebruiker al geregistreerd is voor dit evenement
 			$existing_registration = get_posts([
 				'post_type' => 'event_registration',
@@ -33,8 +33,8 @@ add_action('init', function () {
 						'compare' => '='
 					],
 					[
-						'key' => 'user_email',
-						'value' => $user_email,
+						'key' => 'user_id',
+						'value' => $user_id,
 						'compare' => '='
 					]
 				]
@@ -51,6 +51,7 @@ add_action('init', function () {
 				'post_status' => 'publish',
 				'meta_input' => [
 					'event_id' => $event_id,
+					'user_id' => $user_id,
 					'user_email' => $user_email,
 				],
 			]);
