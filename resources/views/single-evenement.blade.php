@@ -71,7 +71,17 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 					@if ($max_cap = get_field('capacity'))
 					<div class="event-meta-item">
 						<p class="heading">Capaciteit</p>
-						<p class="content">{{ $max_cap }}</p>
+						<p class="content">
+							@if ($current_registrations = get_event_registration_count(get_the_ID()))
+								@if ($current_registrations >= $max_cap)
+									<span style="color: red; font-weight: bold;">Dit evenement zit vol!</span>
+								@else
+									{{ $max_cap - $current_registrations }}
+								@endif
+							@else
+								{{ $max_cap }}
+							@endif
+						</p>
 					</div>
 					@endif
 

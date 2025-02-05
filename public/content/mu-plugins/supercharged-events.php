@@ -129,3 +129,22 @@ if (! function_exists('secure_delete_event_registration')) {
 		return false;
 	}
 }
+
+// Get event registration count
+function get_event_registration_count($event_id) {
+	$registrations = new WP_Query([
+			'post_type' => 'event_registration',
+			'post_status' => 'publish',
+			'meta_query' => [
+					[
+							'key' => 'event_id',
+							'value' => $event_id,
+							'compare' => '='
+					]
+			],
+			'fields' => 'ids', // Optimize performance (only get IDs)
+			'nopaging' => true,
+	]);
+
+	return $registrations->found_posts;
+}
