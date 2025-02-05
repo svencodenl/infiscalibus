@@ -64,6 +64,15 @@ class ACFServiceProvider extends SageServiceProvider
                         'parent_slug' => $parent['menu_slug'],
                     ));
                 }
+
+                if (function_exists('acf_add_options_sub_page')) {
+                    // Add sub page.
+                    $child = acf_add_options_sub_page(array(
+                        'page_title'  => __('Dashboard opties'),
+                        'menu_title'  => __('Dashboard'),
+                        'parent_slug' => $parent['menu_slug'],
+                    ));
+                }
             }
         });
 
