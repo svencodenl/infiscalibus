@@ -7,6 +7,11 @@
     .vacature-item {
       margin-top: unset;
     }
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
   }
 
   .dashboard-events {
