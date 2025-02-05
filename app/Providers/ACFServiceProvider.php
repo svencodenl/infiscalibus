@@ -46,6 +46,9 @@ class ACFServiceProvider extends SageServiceProvider
          * Adds an options page to the admin menu
          */
         add_action('acf/init', function () {
+            // Set Google API KEY
+            acf_update_setting('google_api_key', $_ENV["GOOGLE_MAPS_KEY"]);
+
             if (function_exists('acf_add_options_page')) {
                 // Add parent
                 $parent = acf_add_options_page([

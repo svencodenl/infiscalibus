@@ -111,7 +111,8 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 						<p class="heading">Locatie</p>
 						<p class="content">{{ $location[0]->name }}</p>
 						@if ($google_maps = get_field('google_maps', 'location' . '_' . $location[0]->term_id))
-						<pre>{{ var_dump($google_maps) }}</pre>
+						{{-- <pre>{{ var_dump($google_maps) }}</pre> --}}
+						<span>{{ $google_maps['address'] }}</span>
 						@endif
 					</div>
 					@endif
