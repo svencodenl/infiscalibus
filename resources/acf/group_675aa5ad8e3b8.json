@@ -197,6 +197,101 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_67a50d7c6e265": {
+                    "key": "layout_67a50d7c6e265",
+                    "name": "simple_text",
+                    "label": "Simpele tekst",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67a50d7c6e266",
+                            "label": "Tekst",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_67a50db56e269",
+                            "label": "Tekst breedte",
+                            "name": "text_width",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "col-12": "Volledige breedte",
+                                "col-md-9": "3\/4",
+                                "col-md-6": "1\/2"
+                            },
+                            "default_value": "col-12",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 1,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_67a50f5a504f7",
+                            "label": "Container uitlijning",
+                            "name": "container_alignment",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67a50db56e269",
+                                        "operator": "!=",
+                                        "value": "col-12"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Links",
+                                "middle": "Midden",
+                                "right": "Rechts"
+                            },
+                            "default_value": "left",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -222,5 +317,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737563065
+    "modified": 1738871167
 }

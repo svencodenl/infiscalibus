@@ -1,0 +1,19 @@
+section.simple-text {
+	margin: var(--section-padding) 0;
+
+	.align-left {
+		justify-content: start;
+	}
+
+	.align-middle {
+		justify-content: space-around;
+	}
+
+	.align-right {
+		justify-content: flex-end;
+	}
+
+	@include media-breakpoint-down(md) {
+		margin: 0;
+	}
+}
