@@ -188,3 +188,15 @@ if (! function_exists('is_already_registered_to_event')) {
 add_filter('login_redirect', function ($redirect_to, $requested_redirect_to, $user) {
   return remove_query_arg(['reauth'], $redirect_to);
 }, 10, 3);
+
+// Redirect after logout
+add_action('wp_logout', function () {
+  wp_safe_redirect( home_url() );
+  exit;
+});
+
+// Redirect after login
+add_action('wp_login', function () {
+  wp_safe_redirect( home_url() );
+  exit;
+});
