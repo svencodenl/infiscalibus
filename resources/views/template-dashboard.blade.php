@@ -32,7 +32,7 @@ $registrations = get_posts([
       @endif
     </div>
     <div class="dashboard-events">
-      <h3 class="heading">Event registrations</h3>
+      <h3 class="heading">Aangemelde evenementen</h3>
       @if (count($registrations) > 0)
       <div class="event-slider-container">
         <div class="event-slider-container-inner">
@@ -45,6 +45,8 @@ $registrations = get_posts([
           @endforeach
         </div>
       </div>
+      @else
+      <p class="text--text-muted">Je bent niet aangemeld voor evenementen</p>
       @endif
     </div>
   </div>
