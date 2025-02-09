@@ -18,6 +18,10 @@ body {
     }
   }
 
+  &.admin-bar {
+    margin-top: var(--admin-bar-height);
+  }
+
   &.home,
   &.post-type-archive-bestuur {
     main {
