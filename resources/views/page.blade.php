@@ -3,7 +3,7 @@
 @section('content')
     @while(have_posts()) @php(the_post())
         @include('partials.page-header')
-        @if(!empty(the_content()))
+        @if(!empty(get_post_field('post_content')))
         <section class="section content-page">
             <div class="container">
                 <div class="row d-flex justify-content-center">
