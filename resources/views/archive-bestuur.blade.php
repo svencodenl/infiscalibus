@@ -43,7 +43,7 @@ $bestuur_items = get_posts([
 							@if ($key == 0) <span class="label">Huidig bestuur</span> @endif
 						</div>
 						<div class="content">
-							{!! get_the_content($item->ID) !!}
+							{!! get_post_field('post_content', $item->ID) !!}
 						</div>
 					</div>
 				</div>
