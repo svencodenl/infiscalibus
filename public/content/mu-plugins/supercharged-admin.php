@@ -99,7 +99,7 @@ add_action('template_redirect', function () {
 
 
 // Remove admin bar for all users
-add_filter('show_admin_bar', '__return_false');
+// add_filter('show_admin_bar', '__return_false');
 
 
 // Redirect single post to archive
@@ -183,11 +183,6 @@ if (! function_exists('is_already_registered_to_event')) {
     return $existing_registration[0]->ID ?? false;
   }
 }
-
-// Disable re-auth
-add_filter('login_redirect', function ($redirect_to, $requested_redirect_to, $user) {
-  return remove_query_arg(['reauth'], $redirect_to);
-}, 10, 3);
 
 // Redirect after logout
 add_action('wp_logout', function () {
