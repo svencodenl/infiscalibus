@@ -1,21 +1,21 @@
 html {
-	font-size: var(--font-size-base);
+  font-size: var(--font-size-base);
 }
 
 body {
-	font: {
-		family: $font-family-base;
-		weight: 400;
-		size: var(--font-size-base);
-	}
+  font: {
+    family: $font-family-base;
+    weight: 400;
+    size: var(--font-size-base);
+  }
 
-	color: color(text);
-	line-height: var(--line-height-base);
+  color: color(text);
+  line-height: var(--line-height-base);
 
-	b,
-	strong {
-		font-weight: 600;
-	}
+  b,
+  strong {
+    font-weight: 600;
+  }
 }
 
 body,
@@ -23,11 +23,11 @@ button,
 input,
 select,
 textarea {
-	text-rendering: optimizelegibility;
-	-webkit-tap-highlight-color: transparent;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-feature-settings: "liga", "kern";
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga', 'kern';
 }
 
 // Headings
@@ -41,8 +41,8 @@ h5,
 .h3,
 .h4,
 .h5 {
-	font-weight: 400;
-	font-family: $font-family-heading;
+  font-weight: 400;
+  font-family: $font-family-heading;
 }
 
 h2,
@@ -56,65 +56,66 @@ h6,
 .h4,
 .h5,
 .h6 {
-	line-height: 1.4;
+  line-height: 1.4;
 }
 
 h1,
 .h1 {
-	font-size: 3.2rem;
-	line-height: 1.3;
+  font-size: 3.2rem;
+  line-height: 1.3;
 }
 
 h2,
 .h2 {
-	font-size: 2.75rem;
+  font-size: 2.75rem;
 
-	@include media-breakpoint-down(md) {
-		font-size: 2.25rem;
-	}
+  @include media-breakpoint-down(md) {
+    font-size: 2.25rem;
+  }
 }
 
 h3,
 .h3 {
-	font-size: 2rem;
-	line-height: 1.5;
+  font-size: 2rem;
+  line-height: 1.5;
 
-	@include media-breakpoint-down(md) {
-		font-size: 1.75rem;
-	}
+  @include media-breakpoint-down(md) {
+    font-size: 1.75rem;
+  }
 }
 
 h4,
 .h4 {
-	font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 h5,
 .h5 {
-	// h5
+  // h5
 }
 
 h6,
 .h6 {
-	// h6
+  // h6
 }
 
 // Textual
 main {
-	p,
-	ul,
-	ol,
-	table {
-		&:not([class*="-none"]) {
-			+ *:not(.btn) {
-				margin-top: 15px;
+  p,
+  ul,
+  ol,
+  table,
+	blockquote {
+    &:not([class*='-none']) {
+      + *:not(.btn) {
+        margin-top: 15px;
 
-				@include media-breakpoint-up(xl) {
-					margin-top: 20px;
-				}
-			}
-		}
-	}
+        @include media-breakpoint-up(xl) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
 }
 
 // Anchors
@@ -124,24 +125,41 @@ td a,
 ul li a,
 ol li a,
 .link {
-	/* stylelint-disable-next-line no-descending-specificity */
-	&:not(.btn) {
-		font-weight: 700;
-		text-decoration: underline;
-	}
+  /* stylelint-disable-next-line no-descending-specificity */
+  &:not(.btn) {
+    font-weight: 700;
+    text-decoration: underline;
+  }
 }
 
 picture,
 figure {
-	figcaption {
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			margin-bottom: 0;
-			color: inherit;
-		}
-	}
+  figcaption {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 0;
+      color: inherit;
+    }
+  }
+}
+
+main .content {
+  ul,
+  ol {
+    margin: 1rem 0;
+    padding: unset;
+    padding-left: 1.5rem;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
 }
