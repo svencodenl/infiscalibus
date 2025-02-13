@@ -13,8 +13,6 @@
   }
 
   .text {
-    width: calc(100% / 12 * 7);
-
     .heading {
       font-weight: 500;
       font-size: 5rem;
@@ -23,7 +21,8 @@
   }
 
   .image {
-    width: calc(100% / 12 * 5);
+    margin-left: calc(100% / 12);
+    min-width: calc(100% / 12 * 5);
     aspect-ratio: 655 / 460;
     border-radius: 10px;
     background-color: color(white);
