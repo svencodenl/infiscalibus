@@ -195,3 +195,8 @@ add_action('wp_login', function () {
   wp_safe_redirect( home_url() );
   exit;
 });
+
+// Decode the title
+add_filter('the_title', function($title, $id = null){
+  return html_entity_decode($title);
+});
