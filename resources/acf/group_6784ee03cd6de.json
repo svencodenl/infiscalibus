@@ -80,8 +80,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "H: i",
-                    "return_format": "H: i",
+                    "display_format": "H:i",
+                    "return_format": "H:i",
                     "allow_in_bindings": 0
                 },
                 {
@@ -125,8 +125,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "H: i",
-                    "return_format": "H: i",
+                    "display_format": "H:i",
+                    "return_format": "H:i",
                     "allow_in_bindings": 1
                 }
             ]
@@ -260,23 +260,42 @@
                 "id": ""
             },
             "choices": {
-                "69": "ABAB",
+                "69": "aaff",
                 "66": "Atlas",
                 "17": "Baker Tilly",
                 "72": "BDO",
                 "81": "Belastingdienst",
-                "78": "BOL",
-                "75": "Bonsen Reuling",
+                "78": "Bol Adviseurs",
+                "75": "BonsenReuling",
                 "84": "Countus",
                 "87": "CROP",
                 "94": "Deloitte",
                 "90": "Dirkzwager",
-                "97": "DTS",
+                "97": "DTS Duijn's Tax Solutions",
                 "53": "EY",
                 "100": "Flynth",
                 "57": "Grant Thornton",
                 "60": "Newtone",
-                "63": "Van Doorne"
+                "63": "Van Doorne",
+                "350": "Duijd fiscalisten",
+                "355": "Fiscaliade",
+                "358": "Forvis Mazars",
+                "420": "Grip Accountants en Adviseurs",
+                "365": "Joanknecht",
+                "368": "Konings Maters",
+                "413": "KPMG Meijburg &amp; Co",
+                "380": "Loyens &amp; Loeff",
+                "371": "Moore MKW",
+                "375": "NautaDutilh",
+                "383": "NeD Tax",
+                "386": "Pereira Tax Consultants",
+                "407": "PwC",
+                "391": "Quantera Global",
+                "394": "Register Belastingadviseurs",
+                "397": "RSM",
+                "410": "Stolwijk Kelderman",
+                "400": "Taxperience",
+                "404": "Wesselman"
             },
             "default_value": [],
             "return_format": "value",
@@ -371,5 +390,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737645952
+    "modified": 1739443706
 }
