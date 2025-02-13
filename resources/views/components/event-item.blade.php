@@ -3,6 +3,8 @@
 	<div class="img-wrapper">
 		@if ($image = wp_get_attachment_image_src( get_post_thumbnail_id( $event->ID ), 'single-post-thumbnail' ))
 			<img src="{{ $image[0] }}" alt="{{ get_the_title($event->ID) }}">
+		@elseif ($logo = get_field('logo_regular', 'option')['url'])
+			<img src="{{ $logo }}" alt="Logo" class="logo">
 		@endif
 	</div>
 
