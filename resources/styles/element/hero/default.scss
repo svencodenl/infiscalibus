@@ -21,8 +21,10 @@
   }
 
   .image {
-    margin-left: calc(100% / 12);
     min-width: calc(100% / 12 * 5);
+    max-width: calc(100% / 12 * 5);
+    margin-left: calc(100% / 12);
+    padding: 5%;
     aspect-ratio: 655 / 460;
     border-radius: 10px;
     background-color: color(white);
@@ -33,17 +35,6 @@
 
     img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .single-partnerkantoor & {
-      padding: 5%;
-
-      img {
-        height: unset;
-        object-fit: unset;
-      }
     }
   }
 
