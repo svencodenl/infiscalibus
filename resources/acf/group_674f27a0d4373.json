@@ -117,30 +117,6 @@
             ]
         },
         {
-            "key": "field_67a87d3c370b9",
-            "label": "Algemene voorwaarden link",
-            "name": "terms_and_conditions_link",
-            "aria-label": "",
-            "type": "page_link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "allow_archives": 0,
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0
-        },
-        {
             "key": "field_674f27c784844",
             "label": "Adres",
             "name": "adres",
@@ -565,6 +541,27 @@
                     "allow_in_bindings": 0
                 }
             ]
+        },
+        {
+            "key": "field_67b361d1ce69e",
+            "label": "Tekst bij Bestuurspagina",
+            "name": "bestuur_text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -585,5 +582,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739095402
+    "modified": 1739809347
 }

@@ -10,8 +10,8 @@ $post_type_label = get_post_type_object($post_type_name)->labels->singular_name;
       <h1 class="heading">
         {{ $post_type_label }}
       </h1>
-      @if (has_excerpt())
-      <p>{{ get_the_excerpt() }}</p>
+      @if ($text = get_field('bestuur_text', 'option'))
+        {!! $text !!}
       @endif
     </div>
   </div>
