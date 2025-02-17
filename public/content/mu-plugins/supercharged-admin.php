@@ -104,8 +104,15 @@ add_action('template_redirect', function () {
 
 // Redirect single post to archive
 add_action('template_redirect', function () {
+  // Bestuur
   if (is_singular('bestuur')) {
     wp_redirect(get_post_type_archive_link('bestuur'), 302);
+    exit;
+  }
+
+  // Dictatencentrale
+  if (is_singular('dictatencentrale')) {
+    wp_redirect(get_post_type_archive_link('dictatencentrale'), 302);
     exit;
   }
 });
