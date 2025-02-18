@@ -3,8 +3,8 @@ $downloads = get_posts([
 'post_type' => 'dictatencentrale',
 'post_status' => 'publish',
 'posts_per_page' => -1,
-'orderby' => 'title',
-'order' => 'ASC',
+'orderby' => 'publish_date',
+'order' => 'DESC',
 ]);
 @endphp
 
