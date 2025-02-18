@@ -129,6 +129,7 @@ if (! function_exists('is_allowed_to_register_to_event')) {
    */
   function is_allowed_to_register_to_event($event_id)
   {
+    // Check is User role is allowed
     $user = wp_get_current_user();
     $is_allowed = false;
 
@@ -149,7 +150,53 @@ if (! function_exists('is_allowed_to_register_to_event')) {
     elseif ($allowed_to_view == 'only_reunist' && !$user_is_reunist)
       $is_allowed = false;
 
+    if ($is_allowed == false) {
+      return $is_allowed;
+    }
+
+    // Check if event end date is in the past
+    $today = DateTime::createFromFormat('d/m/Y', date('d/m/Y')); // Today
+
+    $event_end_date = get_field('event_date_end_date', $event_id);
+
+    if ($event_end_date) {
+      $event_end_datetime = DateTime::createFromFormat('d/m/Y', $event_end_date);
+      $is_allowed = $today->getTimestamp() <= $event_end_datetime->getTimestamp();
+
+      if ($is_allowed == false) {
+        return $is_allowed;
+      }
+    }
+
+    // Check if today is between register dates
+    $start_register = get_field('event_register_start_register', $event_id);
+    $end_register = get_field('event_register_end_register', $event_id);
+
+    $register_start_date = DateTime::createFromFormat('d/m/Y', $start_register);
+    $register_end_date = DateTime::createFromFormat('d/m/Y', $end_register);
+
+    if (!$register_start_date || !$register_end_date) {
+      $is_allowed = true;
+    } elseif (
+      $today->getTimestamp() >= $register_start_date->getTimestamp() &&
+      $today->getTimestamp() <= $register_end_date->getTimestamp()
+    ) {
+      $is_allowed = true;
+    } else {
+      $is_allowed = false;
+      return $is_allowed;
+    }
+
     // Check if max_capacity has been reached
+    $max_cap = get_field('capacity', $event_id);
+    if($max_cap) {
+      $max_cap = (int)$max_cap;
+      $current_cap = get_event_registration_count($event_id);
+  
+      if ($current_cap >= $max_cap) {
+        $is_allowed = false;
+      }
+    }
 
     return $is_allowed;
   }
@@ -193,17 +240,17 @@ if (! function_exists('is_already_registered_to_event')) {
 
 // Redirect after logout
 add_action('wp_logout', function () {
-  wp_safe_redirect( home_url() );
+  wp_safe_redirect(home_url());
   exit;
 });
 
 // Redirect after login
 add_action('wp_login', function () {
-  wp_safe_redirect( home_url() );
+  wp_safe_redirect(home_url());
   exit;
 });
 
 // Decode the title
-add_filter('the_title', function($title, $id = null){
+add_filter('the_title', function ($title, $id = null) {
   return html_entity_decode($title);
 });

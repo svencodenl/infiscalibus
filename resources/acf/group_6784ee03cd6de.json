@@ -53,8 +53,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "j M. Y",
-                    "return_format": "j M. Y",
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
                     "first_day": 1,
                     "allow_in_bindings": 0
                 },
@@ -98,8 +98,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "j M. Y",
-                    "return_format": "j M. Y",
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
                     "first_day": 1,
                     "allow_in_bindings": 0
                 },
@@ -152,7 +152,7 @@
                     "label": "Begin registreren",
                     "name": "start_register",
                     "aria-label": "",
-                    "type": "date_time_picker",
+                    "type": "date_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -169,17 +169,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "j M. Y H:i",
-                    "return_format": "j M. Y H:i",
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
                     "first_day": 1,
-                    "allow_in_bindings": 0
+                    "allow_in_bindings": 1
                 },
                 {
                     "key": "field_678567ee7786f",
                     "label": "Eind registreren",
                     "name": "end_register",
                     "aria-label": "",
-                    "type": "date_time_picker",
+                    "type": "date_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -196,10 +196,10 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "j M. Y H:i",
-                    "return_format": "j M. Y H:i",
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
                     "first_day": 1,
-                    "allow_in_bindings": 0
+                    "allow_in_bindings": 1
                 },
                 {
                     "key": "field_6787c72013e2d",
@@ -390,5 +390,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739443706
+    "modified": 1739869586
 }
