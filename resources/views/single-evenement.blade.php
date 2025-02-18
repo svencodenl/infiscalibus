@@ -22,19 +22,22 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 						<p class="heading">Datum</p>
 						<p class="content">
 							{{ $start_date }}
-							@if (($start_time = get_field('event_date_start_time')) && !get_field('event_date_is_entire_day'))
-							@ {{ $start_time }}
-							@endif
-							@endif
-							@if ($end_date = get_field('event_date_end_date'))
-							-
-							{{ $end_date }}
-							@if (($end_time = get_field('event_date_end_time')) && !get_field('event_date_is_entire_day'))
-							@ {{ $end_time }}
+								@if (($start_time = get_field('event_date_start_time')) && !get_field('event_date_is_entire_day'))
+									@ {{ $start_time }}
+								@endif
+					@endif
+					@if (($end_date = get_field('event_date_end_date')) || ($end_time = get_field('event_date_end_time')))
+								-
+								{{ $end_date }}
+									@if($end_date && ($end_time = get_field('event_date_end_time')))
+										@
+									@endif
+								@if ($end_time && !get_field('event_date_is_entire_day'))
+								{{ $end_time }}
 							@endif
 						</p>
+						@endif
 					</div>
-					@endif
 
 					{{-- Event register deadline --}}
 					@if (!get_field('event_register_no_deadline'))
@@ -57,13 +60,13 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 						<p class="heading">Capaciteit</p>
 						<p class="content">
 							@if ($current_registrations = get_event_registration_count(get_the_ID()))
-								@if ($current_registrations >= $max_cap)
-									<span class="text--error"><strong>Dit evenement zit vol!</strong></span>
-								@else
-									{{ $max_cap - $current_registrations }}
-								@endif
+							@if ($current_registrations >= $max_cap)
+							<span class="text--error"><strong>Dit evenement zit vol!</strong></span>
 							@else
-								{{ $max_cap }}
+							{{ $max_cap - $current_registrations }}
+							@endif
+							@else
+							{{ $max_cap }}
 							@endif
 						</p>
 					</div>
@@ -103,8 +106,11 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 						<p class="heading">Locatie</p>
 						<p class="content">{{ $location[0]->name }}</p>
 						@if ($google_maps = get_field('google_maps', 'location' . '_' . $location[0]->term_id))
-						{{-- <pre>{{ var_dump($google_maps) }}</pre> --}}
-						<a href="https://www.google.com/maps/search/?api=1&query={{ str_replace(' ', '+', $google_maps['address']) }}">{{ $google_maps['address'] }}</a>
+						{{--
+						<pre>{{ var_dump($google_maps) }}</pre> --}}
+						<a
+							href="https://www.google.com/maps/search/?api=1&query={{ str_replace(' ', '+', $google_maps['address']) }}">{{
+							$google_maps['address'] }}</a>
 						@endif
 					</div>
 					@endif
@@ -153,8 +159,9 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 						<input type="hidden" name="user_email" value="{{ wp_get_current_user()->user_email }}">
 						<button type="submit" class="btn btn--orange-primary">Meld je aan</button>
 						@if($terms = get_field('terms_and_conditions_link', 'option'))
-						<p class="terms-text text--text-muted">Door aan te melden ga ik akkoord met de <a href="{{ $terms }}" target="_blank">Algemene voorwaarden</a></p>
-					@endif
+						<p class="terms-text text--text-muted">Door aan te melden ga ik akkoord met de <a href="{{ $terms }}"
+								target="_blank">Algemene voorwaarden</a></p>
+						@endif
 					</form>
 					@endif
 
