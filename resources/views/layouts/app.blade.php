@@ -9,7 +9,7 @@
   @include('utils.styles')
 </head>
 
-<body @php(body_class())>
+<body @php(body_class()) google-key="{{ env('GOOGLE_MAPS_KEY') }}">
   @php(wp_body_open())
 
   <div id="app">

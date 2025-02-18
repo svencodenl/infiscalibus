@@ -22,18 +22,18 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 						<p class="heading">Datum</p>
 						<p class="content">
 							{{ $start_date }}
-								@if (($start_time = get_field('event_date_start_time')) && !get_field('event_date_is_entire_day'))
-									@ {{ $start_time }}
-								@endif
-					@endif
-					@if (($end_date = get_field('event_date_end_date')) || ($end_time = get_field('event_date_end_time')))
-								-
-								{{ $end_date }}
-									@if($end_date && ($end_time = get_field('event_date_end_time')))
-										@
-									@endif
-								@if ($end_time && !get_field('event_date_is_entire_day'))
-								{{ $end_time }}
+							@if (($start_time = get_field('event_date_start_time')) && !get_field('event_date_is_entire_day'))
+							@ {{ $start_time }}
+							@endif
+							@endif
+							@if (($end_date = get_field('event_date_end_date')) || ($end_time = get_field('event_date_end_time')))
+							-
+							{{ $end_date }}
+							@if($end_date && ($end_time = get_field('event_date_end_time')))
+							@
+							@endif
+							@if ($end_time && !get_field('event_date_is_entire_day'))
+							{{ $end_time }}
 							@endif
 						</p>
 						@endif
@@ -108,9 +108,17 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 						@if ($google_maps = get_field('google_maps', 'location' . '_' . $location[0]->term_id))
 						{{--
 						<pre>{{ var_dump($google_maps) }}</pre> --}}
-						<a
-							href="https://www.google.com/maps/search/?api=1&query={{ str_replace(' ', '+', $google_maps['address']) }}">{{
-							$google_maps['address'] }}</a>
+						<a href="https://www.google.com/maps/search/?api=1&query={{ str_replace(' ', '+', $google_maps['address']) }}"
+							target="_blank" class="google-maps-link">
+							<x-google-maps :location="$google_maps" />
+							<div class="address-text">
+								<i><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+										<path
+											d="M320-360h80v-120h140v100l140-140-140-140v100H360q-17 0-28.5 11.5T320-520v160ZM480-80q-15 0-29.5-6T424-104L104-424q-12-12-18-26.5T80-480q0-15 6-29.5t18-26.5l320-320q12-12 26.5-18t29.5-6q15 0 29.5 6t26.5 18l320 320q12 12 18 26.5t6 29.5q0 15-6 29.5T856-424L536-104q-12 12-26.5 18T480-80ZM320-320l160 160 320-320-320-320-320 320 160 160Zm160-160Z" />
+									</svg></i>
+								{{ $google_maps['address'] }}
+							</div>
+						</a>
 						@endif
 					</div>
 					@endif

@@ -22,6 +22,7 @@ class AssetsServiceProvider extends ServiceProvider
          */
         add_action('wp_enqueue_scripts', function (): void {
             bundle('app')->enqueue();
+            wp_enqueue_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=' . env('GOOGLE_MAPS_KEY') . "&loading=async&libraries=marker", [], null, true);
 
             remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
         }, 100);
