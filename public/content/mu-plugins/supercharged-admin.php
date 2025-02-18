@@ -189,10 +189,10 @@ if (! function_exists('is_allowed_to_register_to_event')) {
 
     // Check if max_capacity has been reached
     $max_cap = get_field('capacity', $event_id);
-    if($max_cap) {
+    if ($max_cap) {
       $max_cap = (int)$max_cap;
       $current_cap = get_event_registration_count($event_id);
-  
+
       if ($current_cap >= $max_cap) {
         $is_allowed = false;
       }

@@ -117,9 +117,12 @@ if (! function_exists('secure_delete_event_registration')) {
 			$current_user_id = get_current_user_id();
 			$registration_user_id = get_post_meta($registration_id, 'user_id', true);
 
-			// Check if the current user is the owner or an admin
+			// Check if the current user is the owner of this registration or an admin
 			if ($current_user_id === intval($registration_user_id) || current_user_can('manage_options')) {
+				
+				send_event_unregister_mail_to_admin($registration, $current_user_id);
 				wp_delete_post($registration_id, true);
+
 				return true;
 			} else {
 				wp_die('You are not authorized to delete this registration.');
@@ -131,20 +134,43 @@ if (! function_exists('secure_delete_event_registration')) {
 }
 
 // Get event registration count
-function get_event_registration_count($event_id) {
+function get_event_registration_count($event_id)
+{
 	$registrations = new WP_Query([
-			'post_type' => 'event_registration',
-			'post_status' => 'publish',
-			'meta_query' => [
-					[
-							'key' => 'event_id',
-							'value' => $event_id,
-							'compare' => '='
-					]
-			],
-			'fields' => 'ids', // Optimize performance (only get IDs)
-			'nopaging' => true,
+		'post_type' => 'event_registration',
+		'post_status' => 'publish',
+		'meta_query' => [
+			[
+				'key' => 'event_id',
+				'value' => $event_id,
+				'compare' => '='
+			]
+		],
+		'fields' => 'ids', // Optimize performance (only get IDs)
+		'nopaging' => true,
 	]);
 
 	return $registrations->found_posts;
+}
+
+
+if (! function_exists('send_event_unregister_mail_to_admin')) {
+	function send_event_unregister_mail_to_admin($registration, $current_user_id)
+	{
+		$admin_email = get_option('admin_email');
+		$user_name = get_user_by('id', $current_user_id)->user_nicename;
+		$user_email = get_user_by('id', $current_user_id)->user_email;
+
+		$event_id = get_post_meta($registration->ID)['event_id'][0];
+		$event_title = get_the_title($event_id);
+
+		$to = $admin_email;
+		$subject = "{$user_name} heeft zich afgemeld voor {$event_title}";
+		$body = $subject;
+
+		$headers[] = "From: F.S.V. In Fiscalibus <{$admin_email}>";
+		$headers[] = "Cc: {$user_name} <{$user_email}>";
+
+		wp_mail($to, $subject, $body, $headers);
+	}
 }

@@ -152,7 +152,6 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 					@elseif($show_register_button)
 					<form action="" method="post">
 						@csrf
-						<!-- Bescherming tegen CSRF -->
 						<input type="hidden" name="event_id" value="{{ get_the_ID() }}">
 						<input type="hidden" name="user_id" value="{{ wp_get_current_user()->ID }}">
 						<input type="hidden" name="user_name" value="{{ wp_get_current_user()->user_nicename }}">
