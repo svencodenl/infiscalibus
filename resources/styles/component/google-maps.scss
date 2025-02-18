@@ -1,9 +1,10 @@
 .google-map {
 	width: 100%;
-	height: 400px;
+	aspect-ratio: 4 / 3;
 	border: #ccc solid 1px;
 	margin: 20px 0;
 	pointer-events: none;
+
 }
 
 // Fixes potential theme css conflict.

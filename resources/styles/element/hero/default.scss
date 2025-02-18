@@ -21,8 +21,10 @@
   }
 
   .image {
-    min-width: calc(100% / 12 * 5);
-    max-width: calc(100% / 12 * 5);
+    --image-width: calc(100% / 12 * 5);
+
+    min-width: var(--image-width);
+    max-width: var(--image-width);
     margin-left: calc(100% / 12);
     padding: 5%;
     aspect-ratio: 655 / 460;
@@ -52,7 +54,10 @@
       }
 
       .image {
+        --image-width: 100%;
+
         margin-top: 1rem;
+        margin-left: unset;
         width: 100%;
       }
     }
