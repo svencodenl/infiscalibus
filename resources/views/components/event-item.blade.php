@@ -2,9 +2,9 @@
 <div class="event-item">
 	<div class="img-wrapper">
 		@if ($image = wp_get_attachment_image_src( get_post_thumbnail_id( $event->ID ), 'single-post-thumbnail' ))
-			<img src="{{ $image[0] }}" alt="{{ get_the_title($event->ID) }}">
+		<img src="{{ $image[0] }}" alt="{{ get_the_title($event->ID) }}">
 		@elseif ($logo = get_field('logo_regular', 'option')['url'])
-			<img src="{{ $logo }}" alt="Logo" class="logo">
+		<img src="{{ $logo }}" alt="Logo" class="logo">
 		@endif
 	</div>
 
@@ -20,7 +20,12 @@
 			@endif
 			@if ($date = get_field('event_date_start_date', $event->ID))
 			<div class="meta-item meta-date">
-				<p class="date">{{ $date }}</p>
+				<p class="date">
+					<span>{{ $date }}</span>
+					@if (($start_time = get_field('event_date_start_time', $event->ID)) && !get_field('event_date_is_entire_day', $event->ID))
+						<span>@ {{ $start_time }}</span>
+					@endif
+				</p>
 				<button class="btn btn-io">
 					<i><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px">
 							<path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"></path>
