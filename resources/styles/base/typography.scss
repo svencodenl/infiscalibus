@@ -147,12 +147,17 @@ figure {
   }
 }
 
-main .content {
+main .content,
+main .content-page {
   ul,
   ol {
     margin: 1rem 0;
     padding: unset;
-    padding-left: 1.5rem;
+    padding-left: 1.5em;
+
+    li {
+      padding-left: 0.25em;
+    }
   }
 
   ul {
@@ -162,4 +167,8 @@ main .content {
   ol {
     list-style: decimal;
   }
+}
+
+.has-text-align-center {
+  text-align: center;
 }
