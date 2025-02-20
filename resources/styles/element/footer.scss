@@ -91,10 +91,15 @@ footer.footer {
 			}
 		}
 
-		.footer-col-socials {
-			fill: color(white);
+		.footer-col-contact {
+			ul {
+				opacity: .6;
+			}
+		}
 
+		.footer-col-socials {
 			svg {
+				fill: color(white);
 				width: 1rem;
 				margin-bottom: 1px;
 
