@@ -95,9 +95,6 @@ $nested_nav = recursive_mitems_to_array($primary_nav);
 					</li>
 					@endforeach
 				</ul>
-				<div class="navbar-top-mobile">
-					{!! wp_nav_menu(['theme_location' => 'top_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
-				</div>
 			</nav>
 			@endif
 		</div>
