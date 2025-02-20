@@ -91,6 +91,24 @@ footer.footer {
 			}
 		}
 
+		.footer-col-socials {
+			fill: color(white);
+
+			svg {
+				width: 1rem;
+				margin-bottom: 1px;
+
+				&.linkedin-logo {
+					margin-right: 2px;
+				}
+
+				&.instagram-logo {
+					width: 1.2rem;
+					margin-left: -1px;
+				}
+			}
+		}
+
 		.col-25 {
 			a {
 				font-weight: 400;
