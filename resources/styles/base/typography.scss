@@ -167,6 +167,15 @@ main .content-page {
   ol {
     list-style: decimal;
   }
+
+  table {
+    margin: 1rem 0;
+  }
+
+  table, th, td {
+    border: 1px solid color(border);
+    padding: 0.5em;
+  }
 }
 
 .has-text-align-center {
