@@ -22,7 +22,7 @@
   --spacer: #{$spacer};
   --padding-button: 5px 40px;
   --padding-input: 20px;
-  --section-padding: clamp(5em, 21vh, 12em);
+  --section-padding: 5em;
   --container-padding: clamp(2.5em, 8vw, 8em);
   --gap-padding: clamp(1.5em, 4vw, 2.5em);
   --slider-gap: 40px;
@@ -53,6 +53,7 @@
   @include media-breakpoint-up(md) {
     --height-btn: 40px;
     --height-navbar: 100px;
+    --section-padding: 10em;
   }
 
   @include media-breakpoint-up(lg) {

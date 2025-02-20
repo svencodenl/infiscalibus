@@ -3,7 +3,7 @@
 
 	&.content-single,
 	&.content-page {
-		margin-top: var(--section-padding);
-		margin-bottom: var(--section-padding);
+		margin-top: calc(var(--section-padding) / 2);
+		margin-bottom: calc(var(--section-padding) / 2);
 	}
 }
