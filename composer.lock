@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2dc7d4748dc51d14aaf8d961a748c241",
+    "content-hash": "2739cd71d2ec74864014262d195b223b",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -7164,6 +7164,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/safe-svg/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-smushit",
+            "version": "3.17.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-smushit/",
+                "reference": "tags/3.17.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-smushit.3.17.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-smushit/"
         },
         {
             "name": "wpengine/advanced-custom-fields-pro",
