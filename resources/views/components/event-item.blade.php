@@ -9,7 +9,7 @@
 	</div>
 
 	<div class="content">
-		<h4 class="heading">{{ $event->post_title }}</h4>
+		<h4 class="heading">{{ get_the_title($event->ID) }}</h4>
 		<div class="meta">
 			@if ($categories = get_the_terms($event->ID, 'category-event'))
 			<div class="meta-item meta-categories">

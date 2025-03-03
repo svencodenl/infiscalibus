@@ -74,6 +74,7 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 
 					{{-- Categories --}}
 					@if ($categories = get_the_terms(get_the_ID(), 'category-event'))
+					@if (count($categories) > 0)
 					<div class="event-meta-item">
 						<p class="heading">Categorieën</p>
 						<p class="content">
@@ -82,6 +83,7 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 							@endforeach
 						</p>
 					</div>
+					@endif
 					@endif
 
 					{{-- Declaratie tekst --}}
@@ -104,7 +106,7 @@ $show_register_button = is_allowed_to_register_to_event(get_the_ID());
 					@if ($location = get_the_terms(get_the_ID(), 'location'))
 					<div class="event-meta-item">
 						<p class="heading">Locatie</p>
-						<p class="content">{{ $location[0]->name }}</p>
+						<p class="content">{{ html_entity_decode($location[0]->name) }}</p>
 						@if ($google_maps = get_field('google_maps', 'location' . '_' . $location[0]->term_id))
 						{{--
 						<pre>{{ var_dump($google_maps) }}</pre> --}}
