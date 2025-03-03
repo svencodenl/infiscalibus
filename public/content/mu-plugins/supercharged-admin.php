@@ -99,7 +99,7 @@ add_action('template_redirect', function () {
 
 
 // Remove admin bar for all users
-// add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');
 
 
 // Redirect single post to archive
