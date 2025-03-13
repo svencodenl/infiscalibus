@@ -46,12 +46,15 @@
           .chevron {
             opacity: 0;
           }
+
+          > a:not(.btn) {
+            pointer-events: none;
+          }
         }
 
         &:not(.child) {
           > a:not(.btn) {
             font-size: 1.8rem;
-            pointer-events: none;
           }
         }
       }
