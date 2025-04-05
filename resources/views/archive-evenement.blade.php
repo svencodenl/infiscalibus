@@ -7,6 +7,15 @@ $args = array(
 'meta_key' => 'event_date_start_date',
 'orderby' => 'meta_value',
 'order' => 'ASC',
+'numberposts' => -1,
+'meta_query' => array(
+	array(
+		'key' => 'event_date_start_date',
+		'value' => date('Y-m-d'),
+		'compare' => '>=',
+		'type' => 'DATE',
+	),
+),
 );
 $posts = get_posts($args);
 @endphp
@@ -21,7 +30,7 @@ $posts = get_posts($args);
 		<div class="event-slider-container">
 			<div class="event-slider-container-inner">
 				@foreach ($posts as $event)
-					<x-event-item :event="$event" />
+				<x-event-item :event="$event" />
 				@endforeach
 			</div>
 		</div>
@@ -29,4 +38,3 @@ $posts = get_posts($args);
 </section>
 
 @endsection
-

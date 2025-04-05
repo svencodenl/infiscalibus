@@ -7,7 +7,15 @@ $args = array(
 'meta_key' => 'event_date_start_date',
 'orderby' => 'meta_value',
 'order' => 'ASC',
-'posts_per_page' => 3
+'posts_per_page' => 3,
+'meta_query' => array(
+	array(
+		'key' => 'event_date_start_date',
+		'value' => date('Y-m-d'),
+		'compare' => '>=',
+		'type' => 'DATE',
+	),
+),
 );
 $posts = get_posts($args);
 
