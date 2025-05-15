@@ -5,15 +5,47 @@ Template Name: Dashboard template
 @php
 $registrations = get_posts([
   'post_type' => 'event_registration',
+  'post_status' => 'publish',
   'posts_per_page' => -1, // Retrieve all registrations
   'meta_query' => [
+    'relation' => 'AND',
     [
       'key' => 'user_id',
       'value' => get_current_user_id(),
       'compare' => '='
+    ],
+    [
+      // This subquery ensures we only get registrations for future events
+      'relation' => 'EXISTS',
+      [
+        'key' => 'event_id',
+        'compare' => 'EXISTS'
+      ]
     ]
   ]
 ]);
+
+// Filter registrations to only include those for future events
+$future_registrations = [];
+$today = date('Y-m-d');
+
+foreach ($registrations as $registration) {
+  $event_id = get_post_meta($registration->ID, 'event_id', true);
+  if ($event_id) {
+    $event_date = get_field('event_date_start_date', $event_id);
+    if ($event_date) {
+      // Convert DD/MM/YYYY to YYYY-MM-DD format for comparison
+      $date_parts = explode('/', $event_date);
+      if (count($date_parts) === 3) {
+        $formatted_date = $date_parts[2] . '-' . $date_parts[1] . '-' . $date_parts[0];
+        if ($formatted_date >= $today) {
+          $future_registrations[] = $registration;
+        }
+      }
+    }
+  }
+}
+$registrations = $future_registrations;
 @endphp
 
 @extends('layouts.app')
